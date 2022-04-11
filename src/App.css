@@ -1,0 +1,102 @@
+:root {
+  background-color: rgb(31, 28, 28);
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  background-color: rgb(20, 18, 18);
+  box-shadow: .5px .5px 5px #000000;
+  height: 2em;
+}
+
+.navbar-link {
+  color: rgb(190, 10, 10);
+  text-shadow: 1px 1px .5px #000000;
+  text-decoration: none;
+  font-size: 4vh;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.navbar-link:hover{
+  color: white;
+  text-shadow: 1px 1px .5px #000000;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(20, 18, 18);
+  box-shadow: .5px .5px 5px #000000;
+  height: 3em;
+  color: rgb(190, 10, 10);
+  text-shadow: 1px 1px .5px #000000;
+  text-decoration: none;
+  font-size: 2.5vh;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.github-link {
+  color: rgb(190, 10, 10);
+  text-shadow: 1px 1px .5px #000000;
+  text-decoration: none;
+  font-size: 2.5vh;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.github-link:hover{
+  color: white;
+  text-shadow: 1px 1px .5px #000000;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 23em;
+  color: rgb(190, 10, 10);
+  text-shadow: 1px 2px .1px #000000;
+  text-align: center;
+}
+
+
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
