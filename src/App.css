@@ -3,6 +3,8 @@
 }
 
 
+
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -53,6 +55,12 @@
 .github-link:hover{
   color: white;
   text-shadow: 1px 1px .5px #000000;
+}
+
+.layout {
+  color: rgb(190, 10, 10);
+  text-shadow: 1px 2px .1px #000000;
+  text-align: center;
 }
 
 .main {
