@@ -57,11 +57,22 @@
   text-shadow: 1px 1px .5px #000000;
 }
 
-.layout {
+header {
   color: rgb(190, 10, 10);
   text-shadow: 1px 2px .1px #000000;
   text-align: center;
 }
+
+.dd {
+  font-size: 3em;
+  margin: 2vh
+}
+
+.sub-header {
+  font-size: 1em;
+  margin: 1vh
+}
+
 
 .main {
   display: flex;
@@ -71,6 +82,11 @@
   color: rgb(190, 10, 10);
   text-shadow: 1px 2px .1px #000000;
   text-align: center;
+}
+
+.logos {
+  height: 15vh;
+  width: 15vh;
 }
 
 
