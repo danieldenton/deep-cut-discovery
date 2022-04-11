@@ -6,13 +6,12 @@ export default function Footer() {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/danieldenton"
+          href="https://github.com/danieldenton/deep-cut-discovery"
           className="github-link"
         >
           Github
         </a>
       </div>
-      <p>Portfolio created in React.js</p>
     </footer>
   );
 }

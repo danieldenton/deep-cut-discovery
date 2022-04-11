@@ -7,7 +7,10 @@ import {
 import "./App.css";
 import Layout from "./components/layout/Layout";
 import Home from "./components/pages/Home";
-import About from "./components/pages/About";
+import Profile from "./components/pages/Profile";
+import Landing from "./components/pages/Landing";
+import Saved from "./components/pages/Saved";
+import Register from "./components/pages/Register";
 
 export default function App() {
   return (
@@ -15,8 +18,11 @@ export default function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/" element={<Landing />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/Profile/:id" element={<Profile />} />
+            <Route path="/Saved/:id" element={<Saved />} />
+            <Route path="/Register" element={<Register />} />
           </Routes>
         </Layout>
       </Router>
