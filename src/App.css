@@ -24,7 +24,7 @@
 }
 
 .navbar-link:hover{
-  color: white;
+  color: rgb(181, 181, 76);
   text-shadow: 1px 1px .5px #000000;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .github-link:hover{
-  color: white;
+  color: rgb(181, 181, 76);
   text-shadow: 1px 1px .5px #000000;
 }
 
@@ -73,6 +73,10 @@ header {
   margin: 1vh
 }
 
+.page-header {
+  font-size: 4vh;
+}
+
 
 .main {
   display: flex;
@@ -84,9 +88,21 @@ header {
   text-align: center;
 }
 
+
 .logos {
   height: 15vh;
   width: 15vh;
+  border: 1px solid black;
+  margin: 2px;
+}
+
+.bio{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(181, 181, 76);
+  margin: 5vh;
+  font-size: 3vh;
 }
 
 
