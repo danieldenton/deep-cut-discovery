@@ -1,20 +1,26 @@
 import { Link } from "react-router-dom";
-export default function Navbar() {
-  return (
-    <nav className="navbar">
+export default function Navbar({ handleLogout, currentUser }) {
+  const loggedIn = (
+    <>
+      {/* if the user is logged in */}
       <Link to="/home" className="navbar-link">
         Home
       </Link>
-      <Link to="/profile/:id" className="navbar-link">
-        Profile
+      <Link to="/discover" className="navbar-link">
+        Discover
       </Link>
-      <Link to="/saved/:id" className="navbar-link">
-        Saved
+      {currentUser ? (
+        <Link to={`/profiles/${currentUser.id}`} className="nav-link">
+          My Profile
+        </Link>
+      ) : null}
+      const loggedOut = (<></>)
+      <Link to="/" className="nav-link">
+        <span onClick={handleLogout}>Log Out</span>
       </Link>
-      <Link to="/search" className="navbar-link">
-        Search
-      </Link>
-      <Link to="/">Log Out</Link>
-    </nav>
+    </>
   );
+
+  const loggedOut = <></>;
+  return <nav className="navbar">{currentUser ? loggedIn : loggedOut}</nav>;
 }

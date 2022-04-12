@@ -5,29 +5,74 @@ import {
   Navigate,
 } from "react-router-dom";
 import { useState, useEffect } from "react";
+import jwt_decode from "jwt-decode";
 
 import "./App.css";
 import Layout from "./components/layout/Layout";
 import Home from "./components/pages/Home";
 import Profile from "./components/pages/Profile";
 import Landing from "./components/pages/Landing";
-import Saved from "./components/pages/Saved";
 import Register from "./components/pages/Register";
-import Search from "./components/pages/Search";
+import Search from "./components/pages/Discover";
 
 export default function App() {
-  const [token, setToken] = useState("");
+  // STATE
+  // current user
+  const [currentUser, setCurrentUser] = useState(null);
+
+  // USE-EFFECT
+  // useEffect that handles localstorage if the user navigates away from the page/refreshes
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    // if a token is found, log the user in; otherwise, make sure they are logged out
+    if (token) {
+      setCurrentUser(jwt_decode(token));
+    } else {
+      setCurrentUser(null);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    // remove the token from local storage
+    if (localStorage.getItem("jwt")) localStorage.removeItem("jwt");
+    // set the user state to be null
+    setCurrentUser(null);
+  };
+
   return (
     <div className="App">
       <Router>
-        <Layout>
+        <Layout handleLogout={handleLogout} currentUser={currentUser}>
           <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/profile/:id" element={<Profile />} />
-            <Route path="/saved/:id" element={<Saved />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/search" element={<Search />} />
+            <Route
+              path="/"
+              element={
+                <Landing
+                  setCurrentUser={setCurrentUser}
+                  currentUser={currentUser}
+                />
+              }
+            />
+
+            <Route
+              path="/register"
+              element={
+                <Register
+                  currentUser={currentUser}
+                  setCurrentUser={setCurrentUser}
+                />
+              }
+            />
+            <Route path="/home" element={<Home currentUser={currentUser} />} />
+            <Route
+              path="/profile/:id"
+              element={<Profile currentUser={currentUser} />}
+            />
+
+            <Route
+              path="/search"
+              element={<Search currentUser={currentUser} />}
+            />
           </Routes>
         </Layout>
       </Router>

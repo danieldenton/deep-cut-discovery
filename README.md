@@ -4,7 +4,7 @@ Deep Cut Discovery is a MERN stack application. Link to server repository
 
 # What it is
 
-Deep Cut Discovery is a social music blog where music listeners can share their new discoveries with other like minded users. If a user happens to like another user's post and wants to more about that user, they can visit that user's profile page and see the user's past posts to see if they can find more music to checkout. This app will use the Spotify API. The user will be able to search for the song or album that would like to share, and then post the album cover to a socila media style feed with a little bit of writting below the artwork. Users will be able to favorite albums or songs and the same artwork that will show u on the feed for other users to see so they get a feel for that user's taste.
+Deep Cut Discovery is a social music blog where music listeners can share their new discoveries with other like minded users. If a user happens to like another user's post and wants to more about that user, they can visit that user's profile page and see the user's past posts to see if they can find more music to checkout. This app will use the Discogs API. The user will be able to search for the song or album that would like to share, and then post the album cover to a social media style feed with a little bit of writting below the artwork. Users will be able to favorite albums or songs and the same artwork that will show u on the feed for other users to see so they get a feel for that user's taste.
 
 # Screenshot
 
