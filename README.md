@@ -67,6 +67,52 @@ The technologies used to create this app were MongoDB, Mongoose, Express, React.
 | GET      | /profiles/:id | Renders specific user with all corresponding posts and fovorites |
 | GET      | /search       | allows you to search Spotify select some music and create a post |
 
+# Wireframes
+
+![Landing](./assets/wireframeLanding.png)
+
+![Home](./assets/wireframeHome.png)
+
+![Profile](./assets/wireframeProfile.png)
+
+![Post](./assets/wireframePost.png)
+
+![SignUp](./assets/wireframeSignUp.png)
+
 # ERD
 
 ![ERD](./assets/DCD-ERD.png)
+
+# User Stories
+
+- As a user without an account, I would like to register with my name, email, and password.
+- As a user who finished registration, I would like to be able to sign into my created account.
+- As a user who is signed in, I would like to be able to sign out of my account.
+- As a user I want to post albums or songs to the site, so I can share what I've discovered
+- As a user I would like to edit any post I have already made.
+- As a user I would like to delete any post I have already made.
+- As a user I want to be the only one who can edit or delete my post.
+- As a user I want to click on others profiles, so I can see the posts they've made or records they favorited.
+- As a user I want to click on an post of another user to see more information.
+  -As a user I want to be able to favorite the music from someone else's post to add to my page.
+
+# MVP goals
+
+- Sign up and sign in functionality.
+- User authentication with encrpyted passwords.
+- CRUD functionality for a users post
+- User authorization for post update and delete.
+- Layout for signed in user home page showing all users with a feed of all of the posts.
+- Profile page which shows all of the users posts as well as other records they've favorited.
+
+# Stretch goals
+
+- Make this look really good using only Sass
+- add comments to the posts from other users
+- super stretch hide users who post bad songs/curating your own feed
+
+# Sprint goals
+
+- Tuesday make sure the API is working with the page and having most of the backend complete
+- Wednesday having all of the backend complete and all of the functionality of the front end.
+- Thursday MVP
