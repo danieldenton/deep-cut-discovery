@@ -11,6 +11,9 @@ export default function Navbar() {
       <Link to="/saved/:id" className="navbar-link">
         Saved
       </Link>
+      <Link to="/search" className="navbar-link">
+        Search
+      </Link>
       <Link to="/">Log Out</Link>
     </nav>
   );

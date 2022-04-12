@@ -11,6 +11,7 @@ import Profile from "./components/pages/Profile";
 import Landing from "./components/pages/Landing";
 import Saved from "./components/pages/Saved";
 import Register from "./components/pages/Register";
+import Search from "./components/pages/Search";
 
 export default function App() {
   return (
@@ -20,9 +21,10 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/Profile/:id" element={<Profile />} />
-            <Route path="/Saved/:id" element={<Saved />} />
-            <Route path="/Register" element={<Register />} />
+            <Route path="/profile/:id" element={<Profile />} />
+            <Route path="/saved/:id" element={<Saved />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </Layout>
       </Router>
