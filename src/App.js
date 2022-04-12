@@ -4,6 +4,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import "./App.css";
 import Layout from "./components/layout/Layout";
@@ -15,6 +16,7 @@ import Register from "./components/pages/Register";
 import Search from "./components/pages/Search";
 
 export default function App() {
+  const [token, setToken] = useState("");
   return (
     <div className="App">
       <Router>
