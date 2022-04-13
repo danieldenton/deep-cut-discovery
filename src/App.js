@@ -13,13 +13,13 @@ import Home from "./components/pages/Home";
 import Profile from "./components/pages/Profile";
 import Landing from "./components/pages/Landing";
 import Register from "./components/pages/Register";
-import Search from "./components/pages/Discover";
+import Discover from "./components/pages/Discover";
+import Post from "./components/pages/Post";
 
 export default function App() {
   // STATE
   // current user
   const [currentUser, setCurrentUser] = useState(null);
-
   // USE-EFFECT
   // useEffect that handles localstorage if the user navigates away from the page/refreshes
   useEffect(() => {
@@ -70,9 +70,10 @@ export default function App() {
             />
 
             <Route
-              path="/search"
-              element={<Search currentUser={currentUser} />}
+              path="/discover"
+              element={<Discover currentUser={currentUser} />}
             />
+            <Route path="/post" element={<Post currentUser={currentUser} />} />
           </Routes>
         </Layout>
       </Router>
