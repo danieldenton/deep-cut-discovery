@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 export default function Layout(props) {
   return (
     <div className="layout">
-      <Navbar />
+      <Navbar {...props} />
       <header>
         <h1 className="dd">Deep Cut Discovery</h1>
       </header>
