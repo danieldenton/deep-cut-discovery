@@ -11,12 +11,9 @@ export default function Navbar({ handleLogout, currentUser }) {
           <Link to="/discover" className="navbar-link">
             Discover
           </Link>
-          {currentUser ? (
-            <Link to={`/profiles/${currentUser.id}`} className="navbar-link">
-              My Profile
-            </Link>
-          ) : null}
-
+          <Link to={`/profiles/${currentUser.id}`} className="navbar-link">
+            My Profile
+          </Link>
           <Link to="/" className="navbar-link">
             <span onClick={handleLogout}>Log Out</span>
           </Link>
