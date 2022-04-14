@@ -108,15 +108,74 @@ header {
   font-size: 3vh;
 }
 
-.dicover {
+.search {
   color: rgb(190, 10, 10);
   text-shadow: 1px 2px .1px #000000;
 }
 
-.discover-form {
+.search-form {
   color: rgb(190, 10, 10);
   text-shadow: 1px 2px .1px #000000;
   border: yellow;
+}
+
+.post-images {
+  margin: 5px;
+  width: 18vw;
+}
+
+img {
+  width: 100%
+}
+
+.search-and-post-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100vh;
+  border: solid yellow 1px;
+}
+
+.post-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 70vh;
+  border: solid yellow 1px;
+}
+
+.empty-post-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 70vh;
+  border: solid yellow 1px;
+}
+
+.post-selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 70vh;
+  border: solid yellow 1px;
+}
+
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 70vh;
+  border: solid yellow 1px;
+  overflow-y: scroll;
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {

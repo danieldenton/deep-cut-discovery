@@ -13,8 +13,8 @@ import Home from "./components/pages/Home";
 import Profile from "./components/pages/Profile";
 import Landing from "./components/pages/Landing";
 import Register from "./components/pages/Register";
-import Discover from "./components/pages/Discover";
-import Post from "./components/pages/Post";
+import SearchPage from "./components/pages/SearchPage";
+import PostForm from "./components/pages/PostForm";
 
 export default function App() {
   // STATE
@@ -70,10 +70,13 @@ export default function App() {
             />
 
             <Route
-              path="/discover"
-              element={<Discover currentUser={currentUser} />}
+              path="/search"
+              element={<SearchPage currentUser={currentUser} />}
             />
-            <Route path="/post" element={<Post currentUser={currentUser} />} />
+            <Route
+              path="/post"
+              element={<PostForm currentUser={currentUser} />}
+            />
           </Routes>
         </Layout>
       </Router>

@@ -8,8 +8,8 @@ export default function Navbar({ handleLogout, currentUser }) {
           <Link to="/home" className="navbar-link">
             Home
           </Link>
-          <Link to="/discover" className="navbar-link">
-            Discover
+          <Link to="/search" className="navbar-link">
+            Search
           </Link>
           <Link to={`/profile/${currentUser.id}`} className="navbar-link">
             My Profile

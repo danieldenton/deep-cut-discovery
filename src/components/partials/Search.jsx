@@ -1,9 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
-export default function Discover({ currentUser }) {
+export default function Search({
+  currentUser,
+  searchResults,
+  setSearchResults,
+  setSelectedRecord,
+}) {
   const [searchValue, setSearchValue] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
 
   // FUNCTIONS
   const handleSubmit = async (e) => {
@@ -26,15 +30,27 @@ export default function Discover({ currentUser }) {
     }
   };
 
+  const handleSelectionClick = (searchResult) => {
+    setSelectedRecord(searchResult);
+  };
+
   const images = searchResults.map((searchResult, idx) => {
-    return <div key={`searchResult-link${idx}`}></div>;
+    return (
+      <div
+        className="post-images"
+        key={`searchResult-link${idx}`}
+        onClick={() => handleSelectionClick(searchResult)}
+      >
+        <img src={searchResult.cover_image} alt={searchResult.title} />
+      </div>
+    );
   });
 
   return (
-    <div className="discover">
-      <h1>Discover</h1>
+    <div className="search">
+      <h1>Search</h1>
 
-      <form className="discover-form" onSubmit={handleSubmit}>
+      <form className="search-form" onSubmit={handleSubmit}>
         <input
           type="text"
           autoComplete="off"
@@ -45,6 +61,7 @@ export default function Discover({ currentUser }) {
           Search
         </button>
       </form>
+      <div className="search-results-container">{images}</div>
     </div>
   );
 }
