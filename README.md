@@ -52,7 +52,6 @@ The technologies used to create this app were MongoDB, Mongoose, Express, React.
 | GET      | /api-v1/users/:id      | Reading user document corresponding to ID         |
 | PUT      | /api-v1/users/:id      | Updates user document with profile pic            |
 | DELETE   | /api-v1/users/:id      | Deletes user document corresponding to ID         |
-| GET      | /api-v1/posts          | Get posts subdocs in current user document        |
 | POST     | /api-v1/posts          | Creates post subdoc in current user document      |
 | PUT      | /api-v1/posts/:id      | Updates picture caption corresponding to ID       |
 | DELETE   | /api-v1/posts/:id      | Delete individul picture post corresponding to ID |
