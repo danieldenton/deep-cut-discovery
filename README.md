@@ -57,6 +57,7 @@ The technologies used to create this app were MongoDB, Mongoose, Express, React.
 | PUT      | /api-v1/posts/:id      | Updates picture caption corresponding to ID       |
 | DELETE   | /api-v1/posts/:id      | Delete individul picture post corresponding to ID |
 | POST     | /api-v1/faves          | Saves a favorite to user ID                       |
+| DELETE   | /api-v1/faves/:id      | deletes a favorite from user ID                   |
 
 # Restful Routing Chart - front-end
 
