@@ -16,7 +16,7 @@ export default function SearchPage({ currentUser }) {
         setSelectedRecord={setSelectedRecord}
       />
 
-      <Post selectedRecord={selectedRecord} />
+      <Post currentUser={currentUser} selectedRecord={selectedRecord} />
     </div>
   );
 }
