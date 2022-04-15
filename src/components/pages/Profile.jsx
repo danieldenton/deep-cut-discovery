@@ -83,12 +83,12 @@ export default function Profile({ currentUser, handleLogout }) {
       ) : null}
       <div className="fave-tile-container">
         {faveTiles}
-        {showEdit && (
+        {/* {showEdit && (
           <button
-            onClick={() => handleDelete(fave._id)}
+            onClick={() => handleDelete(faveTiles)}
             className="delete-btn"
           ></button>
-        )}
+        )} */}
       </div>
     </div>
   );
