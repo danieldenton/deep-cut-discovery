@@ -1,14 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
+import Tile from "./Tile";
 
 export default function Search({
   currentUser,
   searchResults,
   setSearchResults,
   setSelectedRecord,
+  searchValue,
+  setSearchValue,
 }) {
-  const [searchValue, setSearchValue] = useState("");
-
   // FUNCTIONS
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,13 +37,13 @@ export default function Search({
 
   const images = searchResults.map((searchResult, idx) => {
     return (
-      <div
-        className="post-images"
-        key={`searchResult-link${idx}`}
+      <Tile
         onClick={() => handleSelectionClick(searchResult)}
-      >
-        <img src={searchResult.cover_image} alt={searchResult.title} />
-      </div>
+        selection={{
+          image: searchResult.cover_image,
+          title: searchResult.title,
+        }}
+      />
     );
   });
 

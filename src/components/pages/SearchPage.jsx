@@ -2,11 +2,16 @@ import Post from "../partials/Post";
 import Search from "../partials/Search";
 import { useState } from "react";
 
-export default function SearchPage({ currentUser }) {
+export default function SearchPage({
+  currentUser,
+  setSelectedRecord,
+  selectedRecord,
+  searchValue,
+  setSearchValue,
+}) {
   // STATE
   // searchResults for the handleSubmit search funcution in the search component
   const [searchResults, setSearchResults] = useState([]);
-  const [selectedRecord, setSelectedRecord] = useState({});
 
   return (
     <div className="search-and-post-container">
@@ -14,6 +19,8 @@ export default function SearchPage({ currentUser }) {
         searchResults={searchResults}
         setSearchResults={setSearchResults}
         setSelectedRecord={setSelectedRecord}
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
       />
 
       <Post currentUser={currentUser} selectedRecord={selectedRecord} />

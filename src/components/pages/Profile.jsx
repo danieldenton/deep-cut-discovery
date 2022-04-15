@@ -1,11 +1,15 @@
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Tile from "../partials/Tile";
 
 export default function Profile({ currentUser, handleLogout }) {
   // PARAMS
   const { id } = useParams();
 
+  let navigate = useNavigate();
+
+  // STATE
   const [ownerName, setOwnerName] = useState("");
   const [showEdit, setShowEdit] = useState(false);
   const [ownerId, setOwnerId] = useState("");
@@ -42,7 +46,7 @@ export default function Profile({ currentUser, handleLogout }) {
   };
 
   // Deletes pictures corresponding to ID
-  const handleDelete = async (photoId) => {
+  const handleDelete = async (faveId) => {
     try {
       const token = localStorage.getItem("jwt");
       const options = {
@@ -51,7 +55,7 @@ export default function Profile({ currentUser, handleLogout }) {
         },
       };
       await axios.delete(
-        `${process.env.REACT_APP_SERVER_URL}/api-v1/faves/${faves._id}`,
+        `${process.env.REACT_APP_SERVER_URL}/api-v1/faves/${faveId}`,
         options
       );
       setShowEdit(false);
@@ -61,13 +65,39 @@ export default function Profile({ currentUser, handleLogout }) {
     }
   };
 
-  const faveTiles = faves.map((fave, idx) => {
+  const faveTiles = faves.map((selection, idx) => {
     return (
-      <div className="fave-tiles" key={`fave-link${idx}`}>
-        <img src={fave.favorite} />
-      </div>
+      <Tile
+        key={`fave-link${idx}`}
+        selection={{
+          image: selection.favorite,
+          title: selection.title,
+          _id: selection._id,
+        }}
+        handleDelete={handleDelete}
+        showEdit={showEdit}
+      />
     );
   });
+
+  const handleDeleteProfile = async () => {
+    try {
+      const token = localStorage.getItem("jwt");
+      const options = {
+        headers: {
+          Authorization: token,
+        },
+      };
+      await axios.delete(
+        `${process.env.REACT_APP_SERVER_URL}/api-v1/users/${currentUser.id}`,
+        options
+      );
+      handleLogout();
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div>
@@ -82,14 +112,13 @@ export default function Profile({ currentUser, handleLogout }) {
         ) : null
       ) : null}
       <div className="fave-tile-container">
-        {faveTiles}
-        {/* {showEdit && (
-          <button
-            onClick={() => handleDelete(faveTiles)}
-            className="delete-btn"
-          ></button>
-        )} */}
+        <div>{faveTiles}</div>
       </div>
+      {showEdit ? (
+        <button id="delete-btn" onClick={() => handleDeleteProfile()}>
+          delete profile
+        </button>
+      ) : null}
     </div>
   );
 }

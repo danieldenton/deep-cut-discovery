@@ -18,8 +18,9 @@ import PostForm from "./components/pages/PostForm";
 
 export default function App() {
   // STATE
-  // current user
   const [currentUser, setCurrentUser] = useState(null);
+  const [selectedRecord, setSelectedRecord] = useState({});
+  const [searchValue, setSearchValue] = useState("");
   // USE-EFFECT
   // useEffect that handles localstorage if the user navigates away from the page/refreshes
   useEffect(() => {
@@ -66,16 +67,36 @@ export default function App() {
             <Route path="/home" element={<Home currentUser={currentUser} />} />
             <Route
               path="/profile/:id"
-              element={<Profile currentUser={currentUser} />}
+              element={
+                <Profile
+                  currentUser={currentUser}
+                  handleLogout={handleLogout}
+                />
+              }
             />
 
             <Route
               path="/search"
-              element={<SearchPage currentUser={currentUser} />}
+              element={
+                <SearchPage
+                  searchValue={searchValue}
+                  setSearchValue={setSearchValue}
+                  currentUser={currentUser}
+                  setSelectedRecord={setSelectedRecord}
+                  selectedRecord={selectedRecord}
+                />
+              }
             />
             <Route
               path="/post"
-              element={<PostForm currentUser={currentUser} />}
+              element={
+                <PostForm
+                  searchValue={searchValue}
+                  setSearchValue={setSearchValue}
+                  currentUser={currentUser}
+                  selectedRecord={selectedRecord}
+                />
+              }
             />
           </Routes>
         </Layout>

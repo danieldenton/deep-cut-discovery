@@ -1,13 +1,22 @@
-export default function PostForm({ currentUser, selectedRecord }) {
+import BigTile from "../partials/BigTile";
+
+export default function PostForm({
+  currentUser,
+  selectedRecord,
+  searchValue,
+  setSearchValue,
+}) {
   return (
     <div>
+      <h1>Post</h1>
       <form>
-        <input
-          type="image"
-          src={selectedRecord.cover_image}
-          alt={selectedRecord.title}
+        <BigTile
+          selection={{
+            image: selectedRecord.cover_image,
+            title: selectedRecord.title,
+          }}
         />
-        {/* <input
+        <input
           type="text"
           autoComplete="off"
           placeholder="Tell us about this record"
@@ -18,7 +27,7 @@ export default function PostForm({ currentUser, selectedRecord }) {
           autoComplete="off"
           placeholder="Share a link where this record can be heard"
           onChange={(e) => setSearchValue(e.target.value)}
-        /> */}
+        />
         <button className="btn" type="submit">
           Submit
         </button>
