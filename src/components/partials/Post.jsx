@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BigTile from "./BigTile";
 
 export default function Post({
   post,
@@ -8,10 +9,11 @@ export default function Post({
 }) {
   return (
     <div className="post">
-      <h3>{post.title}</h3>
-      <img src={post.image} alt={post.title} />
+      {/* <h6>{post.title}</h6>
+      <img src={post.image} alt={post.title} /> */}
+      <BigTile post={post} />
       <p>{post.text}</p>
-      <p>{post.link}</p>
+      <a href={post.link}>Listen</a>
     </div>
   );
 }

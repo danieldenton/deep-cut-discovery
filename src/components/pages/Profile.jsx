@@ -7,7 +7,6 @@ import Post from "../partials/Post";
 export default function Profile({
   currentUser,
   handleLogout,
-  handleDeletePost,
   showEdit,
   setShowEdit,
 }) {
@@ -52,7 +51,7 @@ export default function Profile({
     setShowEdit(!showEdit);
   };
 
-  // removes fave corresponding to ID from user profile
+  // deletes a post with corresponding to ID from user profile
   const handleDeleteFave = async (faveId) => {
     try {
       const token = localStorage.getItem("jwt");
@@ -63,6 +62,48 @@ export default function Profile({
       };
       await axios.delete(
         `${process.env.REACT_APP_SERVER_URL}/api-v1/faves/${faveId}`,
+        options
+      );
+      setShowEdit(false);
+      setShowEdit(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  // const handleEditPost = async (postId) => {
+  //   try {
+  //     const token = localStorage.getItem("jwt");
+  //     const options = {
+  //       headers: {
+  //         Authorization: token,
+  //       },
+  //     };
+  //     await axios.put(
+  //       `${process.env.REACT_APP_SERVER_URL}/api-v1/posts`,
+  //       {
+  //         ...postForm,
+  //         image: profilePosts.cover_image,
+  //         title: profilePosts.title,
+  //       },
+  //       options
+  //     );
+  //     setShowEdit(false);
+  //     setShowEdit(true);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+
+  const handleDeletePost = async (postId) => {
+    try {
+      const token = localStorage.getItem("jwt");
+      const options = {
+        headers: {
+          Authorization: token,
+        },
+      };
+      await axios.delete(
+        `${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${postId}`,
         options
       );
       setShowEdit(false);
@@ -93,16 +134,23 @@ export default function Profile({
 
   console.log(profilePosts);
 
-  // const userPosts = profilePosts.map((profilePost, idx) => {
-  //   return (
-  //     <Post
-  //       key={`profile-post${idx}`}
-  //       profilePost={profilePost}
-  //       handleDeletePost={handleDeletePost}
-  //       showEdit={showEdit}
-  //     />
-  //   );
-  // });
+  const userPosts = profilePosts.map((post, idx) => {
+    return (
+      <div>
+        <Post key={`profile-post${idx}`} post={post} />
+        <button
+        // onClick={handleEditPost} className="edit-btn"
+        >
+          Edit
+        </button>
+        <button
+        // onClick={handleDeletePost} className="delete-btn"
+        >
+          Delete
+        </button>
+      </div>
+    );
+  });
 
   const faveTiles = faves.map((selection, idx) => {
     return (
@@ -133,7 +181,7 @@ export default function Profile({
       ) : null}
       <div className="profile-posts-and-faves-container">
         <div className="profile-posts-container">
-          {/* <div>{userPosts}</div> */}
+          <div>{userPosts}</div>
         </div>
         <div className="fave-tile-container">
           <div>{faveTiles}</div>

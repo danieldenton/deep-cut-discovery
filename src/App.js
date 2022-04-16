@@ -43,25 +43,6 @@ export default function App() {
     setCurrentUser(null);
   };
 
-  const handleDeletePost = async (postId) => {
-    try {
-      const token = localStorage.getItem("jwt");
-      const options = {
-        headers: {
-          Authorization: token,
-        },
-      };
-      await axios.delete(
-        `${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${postId}`,
-        options
-      );
-      setShowEdit(false);
-      setShowEdit(true);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   return (
     <div className="App">
       <Router>
@@ -86,24 +67,17 @@ export default function App() {
                 />
               }
             />
-            <Route
-              path="/home"
-              element={
-                <Home
-                  currentUser={currentUser}
-                  handleDeletePost={handleDeletePost}
-                />
-              }
-            />
+            <Route path="/home" element={<Home currentUser={currentUser} />} />
             <Route
               path="/profile/:id"
               element={
                 <Profile
                   currentUser={currentUser}
                   handleLogout={handleLogout}
-                  handleDeletePost={handleDeletePost}
                   showEdit={showEdit}
                   setShowEdit={setShowEdit}
+                  setSelectedRecord={setSelectedRecord}
+                  selectedRecord={selectedRecord}
                 />
               }
             />

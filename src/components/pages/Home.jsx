@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Post from "../partials/Post";
 
-export default function Home({ currentUser, handleDeletePosts }) {
+export default function Home({ currentUser, handleDeletePost }) {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
@@ -31,14 +31,7 @@ export default function Home({ currentUser, handleDeletePosts }) {
   const posts = allUsers.map((user) => user.posts).flat();
   console.log(posts);
   const feed = posts.map((post, idx) => {
-    return (
-      <div className="post">
-        <h6>{post.title}</h6>
-        <img src={post.image} alt={post.title} />
-        <p>{post.text}</p>
-        <a href={post.link}>Listen</a>
-      </div>
-    );
+    return <Post post={post} />;
   });
 
   return (
