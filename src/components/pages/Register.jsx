@@ -40,7 +40,7 @@ export default function Register({ currentUser, setCurrentUser }) {
   return (
     <div className="register">
       <h2 className="sign-up">Sign Up</h2>
-      <p>{msg ? `message from server: ${msg}` : ""}</p>
+      <p>{msg ? `${msg}` : ""}</p>
       <form onSubmit={handleFormSubmit}>
         <div className="column">
           <label htmlFor="name">Name:</label>

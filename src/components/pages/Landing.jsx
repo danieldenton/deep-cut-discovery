@@ -39,6 +39,7 @@ export default function Landing({ currentUser, setCurrentUser }) {
 
   return (
     <div>
+      <p>{msg ? `${msg}` : ""}</p>
       <form onSubmit={handleFormSubmit}>
         <div className="column">
           <label htmlFor="email">Email:</label>
