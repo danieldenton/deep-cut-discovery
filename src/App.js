@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
+import axios from "axios";
 
 import "./App.css";
 import Layout from "./components/layout/Layout";
@@ -19,8 +20,10 @@ import PostForm from "./components/pages/PostForm";
 export default function App() {
   // STATE
   const [currentUser, setCurrentUser] = useState(null);
+  const [value, setValue] = useState("");
   const [selectedRecord, setSelectedRecord] = useState({});
-  const [searchValue, setSearchValue] = useState("");
+  const [showEdit, setShowEdit] = useState(false);
+
   // USE-EFFECT
   // useEffect that handles localstorage if the user navigates away from the page/refreshes
   useEffect(() => {
@@ -38,6 +41,25 @@ export default function App() {
     if (localStorage.getItem("jwt")) localStorage.removeItem("jwt");
     // set the user state to be null
     setCurrentUser(null);
+  };
+
+  const handleDeletePost = async (postId) => {
+    try {
+      const token = localStorage.getItem("jwt");
+      const options = {
+        headers: {
+          Authorization: token,
+        },
+      };
+      await axios.delete(
+        `${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${postId}`,
+        options
+      );
+      setShowEdit(false);
+      setShowEdit(true);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -64,13 +86,24 @@ export default function App() {
                 />
               }
             />
-            <Route path="/home" element={<Home currentUser={currentUser} />} />
+            <Route
+              path="/home"
+              element={
+                <Home
+                  currentUser={currentUser}
+                  handleDeletePost={handleDeletePost}
+                />
+              }
+            />
             <Route
               path="/profile/:id"
               element={
                 <Profile
                   currentUser={currentUser}
                   handleLogout={handleLogout}
+                  handleDeletePost={handleDeletePost}
+                  showEdit={showEdit}
+                  setShowEdit={setShowEdit}
                 />
               }
             />
@@ -79,8 +112,8 @@ export default function App() {
               path="/search"
               element={
                 <SearchPage
-                  searchValue={searchValue}
-                  setSearchValue={setSearchValue}
+                  value={value}
+                  setValue={setValue}
                   currentUser={currentUser}
                   setSelectedRecord={setSelectedRecord}
                   selectedRecord={selectedRecord}
@@ -91,8 +124,8 @@ export default function App() {
               path="/post"
               element={
                 <PostForm
-                  searchValue={searchValue}
-                  setSearchValue={setSearchValue}
+                  value={value}
+                  setValue={setValue}
                   currentUser={currentUser}
                   selectedRecord={selectedRecord}
                 />

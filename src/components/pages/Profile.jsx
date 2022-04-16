@@ -2,8 +2,15 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Tile from "../partials/Tile";
+import Post from "../partials/Post";
 
-export default function Profile({ currentUser, handleLogout }) {
+export default function Profile({
+  currentUser,
+  handleLogout,
+  handleDeletePost,
+  showEdit,
+  setShowEdit,
+}) {
   // PARAMS
   const { id } = useParams();
 
@@ -11,8 +18,8 @@ export default function Profile({ currentUser, handleLogout }) {
 
   // STATE
   const [ownerName, setOwnerName] = useState("");
-  const [showEdit, setShowEdit] = useState(false);
   const [ownerId, setOwnerId] = useState("");
+  const [profilePosts, setProfilePosts] = useState([]);
   const [faves, setFaves] = useState([]);
 
   // USE-EFFECT
@@ -30,7 +37,7 @@ export default function Profile({ currentUser, handleLogout }) {
           `${process.env.REACT_APP_SERVER_URL}/api-v1/users/${id}`,
           options
         );
-        console.log(response.data);
+        setProfilePosts(response.data.posts);
         setFaves(response.data.faves);
         setOwnerName(response.data.name);
         setOwnerId(response.data._id);
@@ -45,8 +52,8 @@ export default function Profile({ currentUser, handleLogout }) {
     setShowEdit(!showEdit);
   };
 
-  // Deletes pictures corresponding to ID
-  const handleDelete = async (faveId) => {
+  // removes fave corresponding to ID from user profile
+  const handleDeleteFave = async (faveId) => {
     try {
       const token = localStorage.getItem("jwt");
       const options = {
@@ -64,21 +71,6 @@ export default function Profile({ currentUser, handleLogout }) {
       console.log(err);
     }
   };
-
-  const faveTiles = faves.map((selection, idx) => {
-    return (
-      <Tile
-        key={`fave-link${idx}`}
-        selection={{
-          image: selection.favorite,
-          title: selection.title,
-          _id: selection._id,
-        }}
-        handleDelete={handleDelete}
-        showEdit={showEdit}
-      />
-    );
-  });
 
   const handleDeleteProfile = async () => {
     try {
@@ -99,6 +91,34 @@ export default function Profile({ currentUser, handleLogout }) {
     }
   };
 
+  console.log(profilePosts);
+
+  // const userPosts = profilePosts.map((profilePost, idx) => {
+  //   return (
+  //     <Post
+  //       key={`profile-post${idx}`}
+  //       profilePost={profilePost}
+  //       handleDeletePost={handleDeletePost}
+  //       showEdit={showEdit}
+  //     />
+  //   );
+  // });
+
+  const faveTiles = faves.map((selection, idx) => {
+    return (
+      <Tile
+        key={`fave-link${idx}`}
+        selection={{
+          image: selection.favorite,
+          title: selection.title,
+          _id: selection._id,
+        }}
+        handleDeleteFave={handleDeleteFave}
+        showEdit={showEdit}
+      />
+    );
+  });
+
   return (
     <div>
       <h1>{ownerName}</h1>
@@ -111,14 +131,19 @@ export default function Profile({ currentUser, handleLogout }) {
           </>
         ) : null
       ) : null}
-      <div className="fave-tile-container">
-        <div>{faveTiles}</div>
+      <div className="profile-posts-and-faves-container">
+        <div className="profile-posts-container">
+          {/* <div>{userPosts}</div> */}
+        </div>
+        <div className="fave-tile-container">
+          <div>{faveTiles}</div>
+        </div>
+        {showEdit ? (
+          <button id="delete-btn" onClick={() => handleDeleteProfile()}>
+            delete profile
+          </button>
+        ) : null}
       </div>
-      {showEdit ? (
-        <button id="delete-btn" onClick={() => handleDeleteProfile()}>
-          delete profile
-        </button>
-      ) : null}
     </div>
   );
 }

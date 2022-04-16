@@ -134,6 +134,25 @@ img {
   cursor: pointer;
 }
 
+.profile-posts-and-faves-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.profile-post-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 70vh;
+  border: solid yellow 1px;
+  overflow-y: scroll;
+}
+
 .fave-tile-container {
   display: flex;
   flex-wrap: wrap;
@@ -155,7 +174,7 @@ img {
   border: solid yellow 1px;
 }
 
-.post-container {
+.profile-posts-container {
   display: flex;
   align-items: center;
   justify-content: center;

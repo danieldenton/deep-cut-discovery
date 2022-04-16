@@ -7,8 +7,8 @@ export default function Search({
   searchResults,
   setSearchResults,
   setSelectedRecord,
-  searchValue,
-  setSearchValue,
+  value,
+  setValue,
 }) {
   // FUNCTIONS
   const handleSubmit = async (e) => {
@@ -21,7 +21,7 @@ export default function Search({
         },
       };
       const response = await axios.get(
-        `https://api.discogs.com/database/search?q=${searchValue}&key=tuREWmtEZJcsMebejslm&secret=${process.env.REACT_APP_API_SECRET}`,
+        `https://api.discogs.com/database/search?q=${value}&key=tuREWmtEZJcsMebejslm&secret=${process.env.REACT_APP_API_SECRET}`,
         options
       );
       console.log(response.data.results);
@@ -56,7 +56,7 @@ export default function Search({
           type="text"
           autoComplete="off"
           placeholder="Search"
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={(e) => setValue(e.target.value)}
         />
         <button className="btn" type="submit">
           Search

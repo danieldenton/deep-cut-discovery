@@ -1,4 +1,4 @@
-import Post from "../partials/Post";
+import FaveOrPost from "../partials/FaveOrPost";
 import Search from "../partials/Search";
 import { useState } from "react";
 
@@ -6,8 +6,8 @@ export default function SearchPage({
   currentUser,
   setSelectedRecord,
   selectedRecord,
-  searchValue,
-  setSearchValue,
+  value,
+  setValue,
 }) {
   // STATE
   // searchResults for the handleSubmit search funcution in the search component
@@ -19,11 +19,11 @@ export default function SearchPage({
         searchResults={searchResults}
         setSearchResults={setSearchResults}
         setSelectedRecord={setSelectedRecord}
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
+        value={value}
+        setValue={setValue}
       />
 
-      <Post currentUser={currentUser} selectedRecord={selectedRecord} />
+      <FaveOrPost currentUser={currentUser} selectedRecord={selectedRecord} />
     </div>
   );
 }
