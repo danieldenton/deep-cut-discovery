@@ -37,7 +37,7 @@ export default function PostForm({ currentUser, selectedRecord }) {
       <h1>Post</h1>
       <form>
         <BigTile
-          selection={{
+          record={{
             image: selectedRecord.cover_image,
             title: selectedRecord.title,
           }}

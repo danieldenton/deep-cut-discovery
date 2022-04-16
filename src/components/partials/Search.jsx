@@ -39,7 +39,7 @@ export default function Search({
     return (
       <Tile
         onClick={() => handleSelectionClick(searchResult)}
-        selection={{
+        record={{
           image: searchResult.cover_image,
           title: searchResult.title,
         }}

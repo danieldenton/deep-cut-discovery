@@ -9,11 +9,24 @@ export default function Post({
 }) {
   return (
     <div className="post">
-      {/* <h6>{post.title}</h6>
-      <img src={post.image} alt={post.title} /> */}
-      <BigTile post={post} />
+      <h6>{post.title}</h6>
+      <BigTile record={{ image: post.image, title: post.title }} />
       <p>{post.text}</p>
-      <a href={post.link}>Listen</a>
+      <a href={post.link} target="_blank">
+        Listen
+      </a>
+      {showEdit ? (
+        <>
+          <button
+          // onClick={handleEditPost} className="edit-btn"
+          >
+            Edit
+          </button>
+          <button onClick={() => handleDeletePost()} className="delete-btn">
+            Delete
+          </button>
+        </>
+      ) : null}
     </div>
   );
 }

@@ -132,34 +132,27 @@ export default function Profile({
     }
   };
 
-  console.log(profilePosts);
-
   const userPosts = profilePosts.map((post, idx) => {
     return (
       <div>
-        <Post key={`profile-post${idx}`} post={post} />
-        <button
-        // onClick={handleEditPost} className="edit-btn"
-        >
-          Edit
-        </button>
-        <button
-        // onClick={handleDeletePost} className="delete-btn"
-        >
-          Delete
-        </button>
+        <Post
+          key={`profile-post${idx}`}
+          post={post}
+          handleDeletePost={handleDeletePost}
+          showEdit={showEdit}
+        />
       </div>
     );
   });
 
-  const faveTiles = faves.map((selection, idx) => {
+  const faveTiles = faves.map((fave, idx) => {
     return (
       <Tile
         key={`fave-link${idx}`}
-        selection={{
-          image: selection.favorite,
-          title: selection.title,
-          _id: selection._id,
+        record={{
+          image: fave.image,
+          title: fave.title,
+          _id: fave._id,
         }}
         handleDeleteFave={handleDeleteFave}
         showEdit={showEdit}
@@ -183,15 +176,16 @@ export default function Profile({
         <div className="profile-posts-container">
           <div>{userPosts}</div>
         </div>
+
         <div className="fave-tile-container">
           <div>{faveTiles}</div>
         </div>
-        {showEdit ? (
-          <button id="delete-btn" onClick={() => handleDeleteProfile()}>
-            delete profile
-          </button>
-        ) : null}
       </div>
+      {showEdit ? (
+        <button id="delete-profile-btn" onClick={() => handleDeleteProfile()}>
+          delete profile
+        </button>
+      ) : null}
     </div>
   );
 }

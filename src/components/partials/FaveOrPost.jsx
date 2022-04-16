@@ -2,15 +2,10 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function FaveOrPost({
-  currentUser,
-  selectedRecord,
-  value,
-  setValue,
-}) {
+export default function FaveOrPost({ currentUser, selectedRecord }) {
   let navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmitFave = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("jwt");
@@ -22,7 +17,7 @@ export default function FaveOrPost({
       console.log(selectedRecord.title);
       await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/api-v1/faves`,
-        { favorite: selectedRecord.cover_image, title: selectedRecord.title },
+        { image: selectedRecord.cover_image, title: selectedRecord.title },
         options
       );
 
@@ -36,7 +31,7 @@ export default function FaveOrPost({
       <img src={selectedRecord.cover_image} alt={selectedRecord.title} />
       <Link to="/post">Create a post</Link>
       <form>
-        <button className="btn" type="submit" onClick={handleSubmit}>
+        <button className="btn" type="submit" onClick={handleSubmitFave}>
           Add to favorites
         </button>
       </form>

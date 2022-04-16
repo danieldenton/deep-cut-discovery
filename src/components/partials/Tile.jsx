@@ -1,6 +1,6 @@
 export default function Tile({
-  selection,
-  handleDelete,
+  record,
+  handleDeleteFave,
   showEdit,
   onClick,
   width,
@@ -14,14 +14,14 @@ export default function Tile({
           : "polaroid animate__animated animate__fadeIn"
       }
     >
-      {/* <Link to={`/pictures/${photo._id}`}> */}
-
       <div className="tiles" style={{ width }}>
-        <img src={selection.image} alt={selection.title} />
+        <img src={record.image} alt={record.title} />
       </div>
-      {/* </Link> */}
       {showEdit && (
-        <button onClick={() => handleDelete(selection._id)} className="btn-dlt">
+        <button
+          onClick={() => handleDeleteFave(record._id)}
+          className="btn-dlt"
+        >
           Delete
         </button>
       )}

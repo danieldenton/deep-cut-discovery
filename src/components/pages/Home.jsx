@@ -19,9 +19,7 @@ export default function Home({ currentUser, handleDeletePost }) {
           `${process.env.REACT_APP_SERVER_URL}/api-v1/users/`,
           options
         );
-        console.log(response.data);
         setAllUsers(response.data);
-        console.log(allUsers);
       } catch (err) {
         console.log(err);
       }
@@ -29,7 +27,6 @@ export default function Home({ currentUser, handleDeletePost }) {
   }, []);
 
   const posts = allUsers.map((user) => user.posts).flat();
-  console.log(posts);
   const feed = posts.map((post, idx) => {
     return <Post post={post} />;
   });
