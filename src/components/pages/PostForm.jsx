@@ -17,12 +17,13 @@ export default function PostForm({ currentUser, selectedRecord }) {
           Authorization: token,
         },
       };
-      console.log(selectedRecord.title);
+      console.log(currentUser);
       await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/api-v1/posts`,
         {
           ...postForm,
           creator: currentUser.name,
+          creatorId: currentUser.id,
           image: selectedRecord.cover_image,
           title: selectedRecord.title,
         },

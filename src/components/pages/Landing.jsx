@@ -38,41 +38,49 @@ export default function Landing({ currentUser, setCurrentUser }) {
   if (currentUser) return <Navigate to="/home" />;
 
   return (
-    <div>
-      <p>{msg ? `${msg}` : ""}</p>
-      <form onSubmit={handleFormSubmit}>
-        <div className="column">
-          <label htmlFor="email">Email:</label>
-          <input
-            id="email"
-            type="email"
-            placeholder="Enter email here..."
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            value={form.email}
-          />
-
-          <label htmlFor="password">Password:</label>
-          <input
-            id="password"
-            type="password"
-            onChange={(e) => setForm({ ...form, password: e.target.value })}
-            value={form.password}
-          />
-
-          <button className="btn" type="submit">
-            Log In
-          </button>
-
-          <p>Don't have an account?</p>
-          <Link to="/register" className="register">
-            Sign up here
-          </Link>
+    <div className="landing">
+      <div className="record">
+        <div className="outer-record">
+          <div className="inner-record">
+            <h6>Deep Cut Discovery</h6>
+          </div>
         </div>
-      </form>
-      <div className="outer-record">
-        <div className="inner-record">
-          <h6>Deep Cut Discovery</h6>
-        </div>
+      </div>
+      <div className="login">
+        <form onSubmit={handleFormSubmit}>
+          <div className="login-column">
+            <label className="login-label" htmlFor="email">
+              email
+            </label>
+            <input
+              className="login-input"
+              type="email"
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              value={form.email}
+            />
+
+            <label className="login-label" htmlFor="password">
+              password
+            </label>
+            <input
+              className="login-input"
+              type="password"
+              onChange={(e) => setForm({ ...form, password: e.target.value })}
+              value={form.password}
+            />
+
+            <button className="btn" type="submit">
+              Log In
+            </button>
+            <p className="msg">{msg ? `${msg}` : ""}</p>
+          </div>
+          <div className="sign-up-column">
+            <p>Don't have an account?</p>
+            <Link to="/register" className="register">
+              Sign up here
+            </Link>
+          </div>
+        </form>
       </div>
     </div>
   );
