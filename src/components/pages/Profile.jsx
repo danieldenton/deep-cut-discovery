@@ -107,7 +107,7 @@ export default function Profile({
     }
   };
 
-  const userPosts = profilePosts.map((profilePost, idx) => {
+  const userPosts = profilePosts.reverse().map((profilePost, idx) => {
     return (
       <div>
         <ProfilePost
@@ -136,7 +136,7 @@ export default function Profile({
   });
 
   return (
-    <div>
+    <div className="profile">
       <h1>{ownerName}</h1>
       {currentUser ? (
         ownerId === currentUser.id ? (
