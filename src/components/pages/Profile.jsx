@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Tile from "../partials/Tile";
-import Post from "../partials/Post";
+import ProfilePost from "../partials/ProfilePost";
 
 export default function Profile({
   currentUser,
@@ -110,7 +110,7 @@ export default function Profile({
   const userPosts = profilePosts.map((profilePost, idx) => {
     return (
       <div>
-        <Post
+        <ProfilePost
           key={`profile-post${idx}`}
           post={profilePost}
           handleDeletePost={handleDeletePost}

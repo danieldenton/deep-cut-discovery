@@ -70,7 +70,7 @@ export default function Landing({ currentUser, setCurrentUser }) {
             />
 
             <button className="btn" type="submit">
-              Log In
+              log In
             </button>
             <p className="msg">{msg ? `${msg}` : ""}</p>
           </div>

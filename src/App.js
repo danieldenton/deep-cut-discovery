@@ -10,7 +10,6 @@ import Landing from "./components/pages/Landing";
 import Register from "./components/pages/Register";
 import SearchPage from "./components/pages/SearchPage";
 import PostForm from "./components/pages/PostForm";
-import EditPostForm from "./components/pages/EditPostForm";
 
 export default function App() {
   // STATE
@@ -98,17 +97,6 @@ export default function App() {
                   setValue={setValue}
                   currentUser={currentUser}
                   selectedRecord={selectedRecord}
-                />
-              }
-            />
-            <Route
-              path="/edit"
-              element={
-                <EditPostForm
-                  value={value}
-                  setValue={setValue}
-                  currentUser={currentUser}
-                  post={post}
                 />
               }
             />

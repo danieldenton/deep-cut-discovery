@@ -1,35 +1,8 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import BigTile from "./BigTile";
 
-export default function Post({ post, handleDeletePost, showEdit }) {
-  const [editMode, setEditMode] = useState(false);
-  const [editPostForm, setEditPostForm] = useState({});
-
-  const handleSubmitEdit = async (e, postId) => {
-    e.preventDefault();
-    try {
-      const token = localStorage.getItem("jwt");
-      const options = {
-        headers: {
-          Authorization: token,
-        },
-      };
-      await axios.put(
-        `${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${postId}`,
-        {
-          text: editPostForm,
-        },
-        options
-      );
-
-      setEditMode(!editMode);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
+export default function Post({ post }) {
   return (
     <div className="post">
       <div className="title-tile-text">
@@ -43,46 +16,15 @@ export default function Post({ post, handleDeletePost, showEdit }) {
             </a>
           </div>
           <div className="creator-and-post">
-            {editMode ? (
-              <form>
-                <input
-                  type="text"
-                  autoComplete="off"
-                  onChange={(e) => setEditPostForm({ text: e.target.value })}
-                />
-                <button
-                  onClick={(e) => handleSubmitEdit(e, post._id)}
-                  className="btn"
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            ) : (
-              <div className="post-text">
-                <p>{post.text}</p>
-              </div>
-            )}
+            <div className="post-text">
+              <p>{post.text}</p>
+            </div>
             <Link to={`/profile/${post.creatorId}`} className="post-creator">
               {post.creator}
             </Link>
           </div>
         </div>
       </div>
-
-      {showEdit ? (
-        <>
-          <button onClick={() => setEditMode(!editMode)} className="delete-btn">
-            {editMode ? "done editing" : "edit"}
-          </button>
-          <button
-            onClick={() => handleDeletePost(post._id)}
-            className="delete-btn"
-          >
-            Delete
-          </button>
-        </>
-      ) : null}
     </div>
   );
 }

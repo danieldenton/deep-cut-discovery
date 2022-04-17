@@ -1,14 +1,15 @@
 :root {
-  background-color: rgb(28, 24, 43);
+  background-color: rgba(26, 19, 45, 0.935);
   
 }
 
 .main {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   color: rgb(171, 8, 8);
-  text-shadow: 1px 2px .1px #000000;
+  text-shadow: 2px 2px .1px #000000;
   text-align: center;
 }
 
@@ -96,6 +97,7 @@ header {
   background-color: rgba(4, 2, 79, 0.506);
   color: rgb(171, 8, 8);
   border: solid black 1.2px;
+  border-radius: 0.25em;
   margin: 1px;
 }
 
@@ -106,7 +108,7 @@ header {
 .btn {
   background-color: rgb(44, 18, 127);
   color: rgb(171, 8, 8);
-  font-size: 0.7em;
+  font-size: 0.9em;
   border-radius: 0.75em;
   border: solid black 1.2px;
   text-shadow: 1px 1px 1px black;
@@ -144,8 +146,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 333px;
-  width: 333px;
+  height: 400px;
+  width: 400px;
   border-radius: 50%;
   background-color: black;
 }
@@ -154,19 +156,22 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 120px;
-  width: 120px;
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
   color: rgb(171, 8, 8);
   text-shadow: 1px 1px 1px black;
   background-color: rgb(44, 18, 127);
 }
 
+/* Home */
 .dd {
   font-size: 2em;
-  margin: 2vh
+  margin: 2vh;
+  text-shadow: 2px 2px 1px black;
 }
 
+/* tiles */
 img {
   width: 100%
 }
@@ -182,17 +187,19 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
-  height: 70vh;
-  padding: 20px;
+  justify-content: center;
+  height: 73vh;
+  width: 100%;
+  margin: 5px;
+ 
 }
 
 .title-tile-text {
-
   background-color: rgb(20, 18, 18);
-  border: black solid 1px;
+  border: black solid 2px;
   border-radius: 0.25em;
   width: 100%;
+  padding: 10px;
 }
 
 
@@ -200,14 +207,12 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: space-around;
+  justify-content: center;
   font-size: 1.5em;
   color:rgb(171, 8, 8);
-  margin-top: 15px;
-  text-shadow: 1px 1px .5px black;
+  text-shadow: 2px 2px 1px black;
   width: 100%;
   height: 1em;
- 
 }
 
 .post-tile {
@@ -217,17 +222,17 @@ img {
   height: 62vh;
   cursor: pointer;
   width: 33%;
-  margin: 17px;
+  margin-left: 20px;
 }
 
 .creator-and-post {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 60%;
-  height: 51vh;
+  width: 58%;
+  height: 52vh;
   margin: 11px;
-  background-color: rgba(4, 2, 79, 0.506);
+  background-color: rgba(27, 25, 84, 0.757);
   border: black solid 2px;
   border-radius: 0.25em;
 }
@@ -244,11 +249,11 @@ img {
 .post-creator { 
   font-size: 0.7em;
   color: rgb(171, 8, 8);
-  text-shadow: 1px 2px .1px #000000;
+  text-shadow: 2px 2px .1px #000000;
   text-decoration: none;
-  background-color: rgb(44, 18, 127);
-  border: black solid 1px;
-  border-radius: 0.25em;
+  background-color: rgb(20, 18, 18);
+  border: rgb(44, 18, 127) solid 1.5px;
+  border-radius: 0.5em;
   margin: 15px;
   height: 1.3em;
   width: 33%;
@@ -256,6 +261,77 @@ img {
 
 
 .post-text {
+  margin: 15px;
+  flex: 1;
+  overflow-y: scroll;
+  word-wrap: normal;
+  padding: 5px;
+}
+
+/* Profile */
+.pro-post {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  height: 70vh;
+  padding: 20px;
+}
+
+.pro-title-tile-text {
+  background-color: rgb(20, 18, 18);
+  border: black solid 1px;
+  border-radius: 0.25em;
+  width: 100%;
+}
+
+
+.pro-post-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  font-size: 1.5em;
+  color:rgb(171, 8, 8);
+  margin-top: 15px;
+  text-shadow: 2px 2px 1px black;
+  width: 100%;
+  height: 1em;
+ 
+}
+
+.pro-post-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 62vh;
+  cursor: pointer;
+  width: 33%;
+  margin: 17px;
+}
+
+.pro-creator-and-post {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  height: 51vh;
+  margin: 11px;
+  background-color: rgba(5, 2, 79, 0.387);
+  border: black solid 2px;
+  border-radius: 0.25em;
+}
+
+
+.pro-tile-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.pro-post-text {
   margin: 15px;
   flex: 1;
   overflow-y: scroll;
@@ -316,36 +392,7 @@ img {
   
 }
 
-/* Profile page */
 
-.profile-posts-and-faves-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
-}
-
-.profile-posts-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60vw;
-  height: 70vh;
-  overflow-y: scroll;
-  border: solid yellow 1px;
-}
-
-.fave-tile-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 30vw;
-  height: 70vh;
-  border: solid yellow 1px;
-  overflow-y: scroll;
-}
 
 
 
