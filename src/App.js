@@ -1,12 +1,6 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
-import axios from "axios";
 
 import "./App.css";
 import Layout from "./components/layout/Layout";
@@ -16,6 +10,7 @@ import Landing from "./components/pages/Landing";
 import Register from "./components/pages/Register";
 import SearchPage from "./components/pages/SearchPage";
 import PostForm from "./components/pages/PostForm";
+import EditPostForm from "./components/pages/EditPostForm";
 
 export default function App() {
   // STATE
@@ -23,7 +18,7 @@ export default function App() {
   const [value, setValue] = useState("");
   const [selectedRecord, setSelectedRecord] = useState({});
   const [showEdit, setShowEdit] = useState(false);
-
+  const [post, setPost] = useState({});
   // USE-EFFECT
   // useEffect that handles localstorage if the user navigates away from the page/refreshes
   useEffect(() => {
@@ -78,6 +73,7 @@ export default function App() {
                   setShowEdit={setShowEdit}
                   setSelectedRecord={setSelectedRecord}
                   selectedRecord={selectedRecord}
+                  setPost={setPost}
                 />
               }
             />
@@ -102,6 +98,17 @@ export default function App() {
                   setValue={setValue}
                   currentUser={currentUser}
                   selectedRecord={selectedRecord}
+                />
+              }
+            />
+            <Route
+              path="/edit"
+              element={
+                <EditPostForm
+                  value={value}
+                  setValue={setValue}
+                  currentUser={currentUser}
+                  post={post}
                 />
               }
             />

@@ -22,6 +22,7 @@ export default function PostForm({ currentUser, selectedRecord }) {
         `${process.env.REACT_APP_SERVER_URL}/api-v1/posts`,
         {
           ...postForm,
+          creator: currentUser.name,
           image: selectedRecord.cover_image,
           title: selectedRecord.title,
         },
@@ -35,6 +36,7 @@ export default function PostForm({ currentUser, selectedRecord }) {
   return (
     <div>
       <h1>Post</h1>
+      <h6>{selectedRecord.title}</h6>
       <form>
         <BigTile
           record={{

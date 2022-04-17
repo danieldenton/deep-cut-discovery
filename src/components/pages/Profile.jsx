@@ -71,29 +71,6 @@ export default function Profile({
     }
   };
 
-  // const handleEditPost = async (postId) => {
-  //   try {
-  //     const token = localStorage.getItem("jwt");
-  //     const options = {
-  //       headers: {
-  //         Authorization: token,
-  //       },
-  //     };
-  //     await axios.put(
-  //       `${process.env.REACT_APP_SERVER_URL}/api-v1/posts`,
-  //       {
-  //         ...postForm,
-  //         image: profilePosts.cover_image,
-  //         title: profilePosts.title,
-  //       },
-  //       options
-  //     );
-  //     setShowEdit(false);
-  //     setShowEdit(true);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-
   const handleDeletePost = async (postId) => {
     try {
       const token = localStorage.getItem("jwt");
@@ -106,8 +83,6 @@ export default function Profile({
         `${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${postId}`,
         options
       );
-      setShowEdit(false);
-      setShowEdit(true);
     } catch (err) {
       console.log(err);
     }
@@ -132,12 +107,12 @@ export default function Profile({
     }
   };
 
-  const userPosts = profilePosts.map((post, idx) => {
+  const userPosts = profilePosts.map((profilePost, idx) => {
     return (
       <div>
         <Post
           key={`profile-post${idx}`}
-          post={post}
+          post={profilePost}
           handleDeletePost={handleDeletePost}
           showEdit={showEdit}
         />

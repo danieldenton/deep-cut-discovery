@@ -69,6 +69,11 @@ export default function Landing({ currentUser, setCurrentUser }) {
           </Link>
         </div>
       </form>
+      <div className="outer-record">
+        <div className="inner-record">
+          <h6>Deep Cut Discovery</h6>
+        </div>
+      </div>
     </div>
   );
 }

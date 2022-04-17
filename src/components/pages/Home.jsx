@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Post from "../partials/Post";
 
-export default function Home({ currentUser, handleDeletePost }) {
+export default function Home({ currentUser, handleDeletePost, setPost }) {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
@@ -27,13 +27,13 @@ export default function Home({ currentUser, handleDeletePost }) {
   }, []);
 
   const posts = allUsers.map((user) => user.posts).flat();
-  const feed = posts.map((post, idx) => {
-    return <Post post={post} />;
+  const feed = posts.reverse().map((post, idx) => {
+    return <Post post={post} currentUser={currentUser} />;
   });
 
   return (
     <div className="home">
-      <h1>Home</h1>
+      <h1 className="dd">Deep Cut Discovery</h1>
       {feed}
     </div>
   );
