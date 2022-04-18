@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function FaveOrPost({ currentUser, selectedRecord }) {
@@ -20,7 +19,6 @@ export default function FaveOrPost({ currentUser, selectedRecord }) {
         { image: selectedRecord.cover_image, title: selectedRecord.title },
         options
       );
-
       navigate(`/profile/${currentUser.id}`);
     } catch (err) {
       console.log(err);
@@ -28,13 +26,19 @@ export default function FaveOrPost({ currentUser, selectedRecord }) {
   };
   const selection = (
     <div className="post-selection-container">
-      <img src={selectedRecord.cover_image} alt={selectedRecord.title} />
-      <Link to="/post">Create a post</Link>
+      <Link className="post-link" to="/post">
+        create a post
+      </Link>
       <form>
-        <button className="btn" type="submit" onClick={handleSubmitFave}>
-          Add to favorites
+        <button className="fave-btn" type="submit" onClick={handleSubmitFave}>
+          add to favorites
         </button>
       </form>
+      <img
+        className="selection-img"
+        src={selectedRecord.cover_image}
+        alt={selectedRecord.title}
+      />
     </div>
   );
   // Content to show when there's no selection
@@ -48,7 +52,6 @@ export default function FaveOrPost({ currentUser, selectedRecord }) {
 
   return (
     <div>
-      <h1>Post</h1>
       <div className="post-container">{selected}</div>
     </div>
   );

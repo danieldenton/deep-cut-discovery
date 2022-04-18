@@ -3,7 +3,6 @@ import axios from "axios";
 import Tile from "./Tile";
 
 export default function Search({
-  currentUser,
   searchResults,
   setSearchResults,
   setSelectedRecord,
@@ -50,17 +49,25 @@ export default function Search({
   return (
     <div className="search">
       <div className="search-form-container">
-        <h6>search for a post here</h6>
+        <div>
+          <h6 className="search-message">
+            Search Discogs for your record here:
+          </h6>
+        </div>
         <form className="search-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            autoComplete="off"
-            placeholder="Search"
-            onChange={(e) => setValue(e.target.value)}
-          />
-          <button className="btn" type="submit">
-            Search
-          </button>
+          <div>
+            <input
+              className="search-input"
+              type="text"
+              autoComplete="off"
+              onChange={(e) => setValue(e.target.value)}
+            />
+          </div>
+          <div>
+            <button className="search-btn" type="submit">
+              Search
+            </button>
+          </div>
         </form>
       </div>
       <div className="search-results-container">{images}</div>

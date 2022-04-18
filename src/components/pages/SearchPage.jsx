@@ -15,15 +15,20 @@ export default function SearchPage({
 
   return (
     <div className="search-and-post-container">
-      <Search
-        searchResults={searchResults}
-        setSearchResults={setSearchResults}
-        setSelectedRecord={setSelectedRecord}
-        value={value}
-        setValue={setValue}
-      />
+      <div className="search-and-post-border">
+        <Search
+          searchResults={searchResults}
+          setSearchResults={setSearchResults}
+          value={value}
+          setValue={setValue}
+        />
 
-      <FaveOrPost currentUser={currentUser} selectedRecord={selectedRecord} />
+        <FaveOrPost
+          currentUser={currentUser}
+          selectedRecord={selectedRecord}
+          setSelectedRecord={setSelectedRecord}
+        />
+      </div>
     </div>
   );
 }

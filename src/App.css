@@ -269,17 +269,17 @@ header {
   flex-direction: row;
   align-items: flex-start;
   width: 97.5%;
-   /* border: yellow solid 1px; */
+  height: 150vh;
+  /* overflow-y: auto; */
 }
 
 .profile-posts-container {
   display: flex;
-  align-content: flex-start;
+  align-items: center;
   justify-content: space-around;
   flex-direction: column-reverse;
   width: 60%;
-  overflow-y: auto;
-  /* border: yellow solid 1px; */
+  /* height: 150vh; */
 }
 
 .pro-post {
@@ -289,7 +289,6 @@ header {
   justify-content: space-around;
   height: 50vh;
   width: 55vw;
- 
 }
 
 .pro-title-tile-text {
@@ -391,7 +390,7 @@ header {
     background-color: rgb(171, 8, 8); 
     color: rgb(44, 18, 127);
   }
-  
+
   .btn-dlt {
     background-color: rgb(44, 18, 127);
     color: rgb(171, 8, 8);
@@ -411,17 +410,18 @@ header {
   }
 
 .fave-tile-container {
-  margin-top: 10px;
+  margin-top: 4px;
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 145vh;
-  width: 39vw;
+  /* height: 160vh; */
+  width: 40vw;
   background-color: rgb(20, 18, 18);
   border: black solid 1px;
   border-radius: 0.25em;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .fave-label {
@@ -446,15 +446,69 @@ img {
 
 
 /* Search page */
-.search {
-  color: rgb(171, 8, 8);
-  text-shadow: 1px 2px .1px #000000;
+.search-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(26, 19, 45, 0.935);
+  border: black solid 1px;
+  border-radius: 0.25em;
+  margin: 10px;
+  width: 40vw;
 }
 
 .search-form {
   color: rgb(171, 8, 8);
   text-shadow: 1px 2px .1px #000000;
-  border: yellow;
+}
+
+.search-message {
+  font-size: 1em;
+  margin: 3px;
+}
+
+.search-input {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  border: solid black 1.2px;
+  border-radius: 0.25em;
+  margin: 3px;
+  width: 20vw;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-btn {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  font-size: 0.9em;
+  border-radius: 0.75em;
+  border: solid black 1.2px;
+  text-shadow: 1px 1px 1px black;
+  width: 10vw;
+  margin: 3px
+}
+
+.search-btn:hover {
+  cursor: pointer;
+  background-color: rgb(171, 8, 8); 
+  color: rgb(44, 18, 127);
+}
+
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  width: 40vw;
+  height: 70vh;
+  background-color: rgb(20, 18, 18);
+  border: black solid 1px;
+  border-radius: 0.25em;
+  overflow-y: scroll; 
 }
 
 .search-and-post-container {
@@ -463,17 +517,22 @@ img {
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  height: 100vh;
-  border: solid yellow 1px;
+  height: 100%;
 }
 
-.empty-post-container {
+.search-and-post-border {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  width: 40vw;
-  height: 70vh;
-  border: solid yellow 1px;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  margin: 30px;
+}
+
+.selection-img {
+    margin: 10px;
+    width: 30vw;
 }
 
 .post-selection-container {
@@ -482,20 +541,63 @@ img {
   align-items: center;
   justify-content: center;
   width: 40vw;
-  height: 70vh;
-  border: solid yellow 1px;
+  height: 89vh;
+  background-color: rgb(20, 18, 18);
+  border: black solid 1px;
+  border-radius: 0.25em;
 }
 
-.search-results-container {
+.post-link {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  font-size: 0.9em;
+  border-radius: 0.75em;
+  border: solid black 1.2px;
+  text-shadow: 1px 1px 1px black;
+  width: 15vw;
+  margin: 6px;
+  text-decoration: none;
+}
+
+.post-link:hover {
+  cursor: pointer;
+  background-color: rgb(171, 8, 8); 
+  color: rgb(44, 18, 127);
+}
+
+.fave-btn {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  font-size: 0.9em;
+  border-radius: 0.75em;
+  border: solid black 1.2px;
+  text-shadow: 1px 1px 1px black;
+  width: 15vw;
+  margin: 6px
+}
+
+.fave-btn:hover {
+  cursor: pointer;
+  background-color: rgb(171, 8, 8); 
+  color: rgb(44, 18, 127);
+}
+
+
+.empty-post-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 40vw;
-  height: 70vh;
-  border: solid yellow 1px;
-  overflow-y: scroll; 
+  height: 89vh;
+  background-color: rgb(20, 18, 18);
+  border: black solid 1px;
+  border-radius: 0.25em;
 }
+
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
