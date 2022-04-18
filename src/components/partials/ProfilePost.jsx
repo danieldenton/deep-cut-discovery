@@ -51,13 +51,14 @@ export default function ProfilePost({
               {editMode ? (
                 <form>
                   <input
+                    className="edit-input"
                     type="text"
                     autoComplete="off"
                     onChange={(e) => setEditPostForm({ text: e.target.value })}
                   />
                   <button
                     onClick={(e) => handleSubmitEdit(e, post._id)}
-                    className="btn"
+                    className="edit-delete-btn"
                     type="submit"
                   >
                     Submit

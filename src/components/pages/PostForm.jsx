@@ -35,32 +35,49 @@ export default function PostForm({ currentUser, selectedRecord }) {
     }
   };
   return (
-    <div>
-      <h1>Post</h1>
-      <h6>{selectedRecord.title}</h6>
-      <form>
-        <BigTile
-          record={{
-            image: selectedRecord.cover_image,
-            title: selectedRecord.title,
-          }}
-        />
-        <input
-          type="text"
-          autoComplete="off"
-          placeholder="Tell us about this record"
-          onChange={(e) => setPostForm({ ...postForm, text: e.target.value })}
-        />
-        <input
-          type="text"
-          autoComplete="off"
-          placeholder="Share a link where this record can be heard"
-          onChange={(e) => setPostForm({ ...postForm, link: e.target.value })}
-        />
-        <button onClick={handleSubmit} className="btn" type="submit">
-          Submit
-        </button>
-      </form>
+    <div className="post-page">
+      <div className="post-page-ttt">
+        <h6 className="post-page-title">{selectedRecord.title}</h6>
+        <div className="post-page-form-tile">
+          <BigTile
+            record={{
+              image: selectedRecord.cover_image,
+              title: selectedRecord.title,
+            }}
+          />
+          <form className="post-page-form">
+            <div>
+              <div>
+                <label>Tell us about this record.</label>
+              </div>
+              <input
+                className="post-page-text-input"
+                type="text"
+                autoComplete="off"
+                onChange={(e) =>
+                  setPostForm({ ...postForm, text: e.target.value })
+                }
+              />
+            </div>
+            <div>
+              <div>
+                <label>Share a link where someone could hear it.</label>
+              </div>
+              <input
+                className="post-page-form-link"
+                type="text"
+                autoComplete="off"
+                onChange={(e) =>
+                  setPostForm({ ...postForm, link: e.target.value })
+                }
+              />
+            </div>
+            <button onClick={handleSubmit} className="btn" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

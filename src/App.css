@@ -11,6 +11,8 @@
   color: rgb(171, 8, 8);
   text-shadow: 2px 2px .1px #000000;
   text-align: center;
+  width: 100%;
+  height: 90vh;
 }
 
 header {
@@ -49,6 +51,7 @@ header {
 }
 
 .footer {
+  margin-top: 20vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -114,6 +117,7 @@ header {
   border: solid black 1.2px;
   text-shadow: 1px 1px 1px black;
   width: 10vw;
+  margin: 5px;
 }
 
 .btn:hover {
@@ -211,9 +215,16 @@ header {
 
 
 /* Home */
+
+.home {
+ height: 110vh;
+ overflow-y: auto;
+}
+
 .dd {
   font-size: 2em;
-  margin: 2vh;
+  margin-top: 6vh;
+  margin-bottom: 0vh;;
   text-shadow: 2px 2px 1px black;
 }
 
@@ -225,8 +236,6 @@ header {
   justify-content: center;
   height: 73vh;
   width: 100%;
-  
- 
 }
 
 .title-tile-text {
@@ -235,6 +244,7 @@ header {
   border-radius: 0.25em;
   width: 100%;
   padding: 10px;
+  margin: 4vw;
 }
 
 
@@ -294,6 +304,9 @@ header {
   width: 33%;
 }
 
+.post-creator:hover {
+  cursor: pointer;
+}
 
 .post-text {
   margin: 15px;
@@ -306,12 +319,17 @@ header {
 /* Profile */
 .profile {
   width: 100%;
+  height: 110vh;
   overflow-y: auto;
+}
+
+.owner-name {
+ font-size: 1.3em;
+ margin-bottom: 3px;
 }
 
 .profile-posts-and-faves-container {
   display: flex;
-  
   flex-direction: row;
   align-items: flex-start;
   width: 97.5%;
@@ -324,7 +342,7 @@ header {
   align-items: center;
   justify-content: space-around;
   flex-direction: column-reverse;
-  width: 60%;
+  width: 66%;
   /* height: 150vh; */
 }
 
@@ -405,12 +423,12 @@ header {
 .btn-edit {
     background-color: rgb(44, 18, 127);
     color: rgb(171, 8, 8);
-    font-size: 0.9em;
+    font-size: 0.5em;
     border-radius: 0.75em;
     border: solid black 1.2px;
     text-shadow: 1px 1px 1px black;
-    width: 15vw;
-    margin: 5px;
+    width: 10vw;
+    margin-top: 0px;
   }
   
   .btn-edit:hover {
@@ -455,20 +473,44 @@ header {
     color: rgb(44, 18, 127);
   }
 
+  .edit-input {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  border: solid black 1.2px;
+  border-radius: 0.25em;
+  margin-top: 30px;
+  width: 25vw;
+  }
+
+  .edit-input:focus {
+    outline: none;
+  }
+
 .fave-tile-container {
   margin-top: 4px;
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   /* height: 160vh; */
-  width: 40vw;
+  width: 30vw;
   background-color: rgb(20, 18, 18);
   border: black solid 1px;
   border-radius: 0.25em;
   overflow-y: auto;
 }
+
+/* display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+margin: 10px;
+width: 40vw;
+height: 70vh;
+background-color: rgb(20, 18, 18);
+border: black solid 1px;
+border-radius: 0.25em;
+overflow-y: scroll;  */
 
 .fave-label {
   display: flex;
@@ -640,6 +682,79 @@ img {
   border: black solid 1px;
   border-radius: 0.25em;
 }
+
+/* PostPage */
+.post-page-ttt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: 80vh;
+  margin: 20px;
+  background-color: rgb(20, 18, 18);
+  border: black solid 1px;
+  border-radius: 0.25em;
+}
+
+.post-page-title {
+  font-size: 1em;
+  margin: 5px;
+}
+
+.post-page-form-tile {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.post-page-text-input {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  border: solid black 1.2px;
+  border-radius: 0.25em;
+  margin: 4px;
+  width: 40vw;
+
+}
+
+.post-page-text-input:focus {
+  outline: none;
+}
+
+.post-page-form-link {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  border: solid black 1.2px;
+  border-radius: 0.25em;
+  margin: 4px;
+  width: 40vw;
+}
+
+
+.post-page-form-link:focus {
+  outline: none;
+}
+
+/* .search-btn {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  font-size: 0.9em;
+  border-radius: 0.75em;
+  border: solid black 1.2px;
+  text-shadow: 1px 1px 1px black;
+  width: 10vw;
+  margin: 3px
+}
+
+.search-btn:hover {
+  cursor: pointer;
+  background-color: rgb(171, 8, 8); 
+  color: rgb(44, 18, 127);
+} */
 
 
 

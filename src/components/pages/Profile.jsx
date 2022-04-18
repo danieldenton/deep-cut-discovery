@@ -83,7 +83,7 @@ export default function Profile({
         `${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${postId}`,
         options
       );
-      navigate(`/profile/${ownerId}`);
+      setShowEdit(!showEdit);
     } catch (err) {
       console.log(err);
     }
@@ -139,7 +139,7 @@ export default function Profile({
 
   return (
     <div className="profile">
-      <h1>{ownerName}</h1>
+      <h1 className="owner-name">{ownerName}</h1>
       {currentUser ? (
         ownerId === currentUser.id ? (
           <>
@@ -155,7 +155,9 @@ export default function Profile({
         </div>
 
         <div className="fave-tile-container">
-          <h6 className="fave-label">{`${ownerName}'s favorites`}</h6>
+          <div className="fave-label">
+            <h6>{`${ownerName}'s favorites`}</h6>
+          </div>
           <div>{faveTiles}</div>
         </div>
       </div>
