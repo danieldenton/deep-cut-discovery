@@ -44,7 +44,10 @@ export default function FaveOrPost({ currentUser, selectedRecord }) {
   // Content to show when there's no selection
   const noSelection = (
     <div className="empty-post-container">
-      <p>Select a record from your search results</p>
+      <p className="search-message">
+        Search for a record. Then select one of the search results to create a
+        post with.
+      </p>
     </div>
   );
 

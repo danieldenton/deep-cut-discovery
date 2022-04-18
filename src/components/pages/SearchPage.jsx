@@ -19,6 +19,7 @@ export default function SearchPage({
         <Search
           searchResults={searchResults}
           setSearchResults={setSearchResults}
+          setSelectedRecord={setSelectedRecord}
           value={value}
           setValue={setValue}
         />

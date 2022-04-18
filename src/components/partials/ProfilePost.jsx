@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import Tile from "./Tile";
 
-export default function Post({ post, handleDeletePost, showEdit }) {
+export default function ProfilePost({
+  post,
+  handleDeletePost,
+  showEdit,
+  setShowEdit,
+}) {
   const [editMode, setEditMode] = useState(false);
   const [editPostForm, setEditPostForm] = useState({});
 
@@ -23,8 +27,8 @@ export default function Post({ post, handleDeletePost, showEdit }) {
         },
         options
       );
-
       setEditMode(!editMode);
+      setShowEdit(!showEdit);
     } catch (err) {
       console.log(err);
     }

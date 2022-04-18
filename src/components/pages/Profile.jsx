@@ -83,6 +83,7 @@ export default function Profile({
         `${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${postId}`,
         options
       );
+      navigate(`/profile/${ownerId}`);
     } catch (err) {
       console.log(err);
     }
@@ -115,6 +116,7 @@ export default function Profile({
           post={profilePost}
           handleDeletePost={handleDeletePost}
           showEdit={showEdit}
+          setShowEdit={setShowEdit}
         />
       </div>
     );
