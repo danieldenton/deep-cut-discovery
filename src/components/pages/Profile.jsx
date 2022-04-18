@@ -153,6 +153,7 @@ export default function Profile({
         </div>
 
         <div className="fave-tile-container">
+          <h6 className="fave-label">{`${ownerName}'s favorites`}</h6>
           <div>{faveTiles}</div>
         </div>
       </div>

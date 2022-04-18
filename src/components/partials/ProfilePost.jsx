@@ -33,53 +33,59 @@ export default function Post({ post, handleDeletePost, showEdit }) {
   return (
     <div className="pro-post">
       <div className="pro-title-tile-text">
-        <div className="pro-post-title">
-          <h6>{post.title}</h6>
-        </div>
-        <div className="pro-tile-text">
-          <div className="pro-post-tile">
-            <a href={post.link} target="_blank">
-              <Tile record={{ image: post.image, title: post.title }} />
-            </a>
+        <div className="separate-btns">
+          <div className="pro-post-title">
+            <h6>{post.title}</h6>
           </div>
-          <div className="pro-creator-and-post">
-            {editMode ? (
-              <form>
-                <input
-                  type="text"
-                  autoComplete="off"
-                  onChange={(e) => setEditPostForm({ text: e.target.value })}
-                />
+          <div className="pro-tile-text">
+            <div className="pro-post-tile">
+              <a href={post.link} target="_blank">
+                <Tile record={{ image: post.image, title: post.title }} />
+              </a>
+            </div>
+            <div className="pro-creator-and-post">
+              {editMode ? (
+                <form>
+                  <input
+                    type="text"
+                    autoComplete="off"
+                    onChange={(e) => setEditPostForm({ text: e.target.value })}
+                  />
+                  <button
+                    onClick={(e) => handleSubmitEdit(e, post._id)}
+                    className="btn"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </form>
+              ) : (
+                <div className="pro-post-text">
+                  <p>{post.text}</p>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="edit-del-btns">
+            {showEdit ? (
+              <>
                 <button
-                  onClick={(e) => handleSubmitEdit(e, post._id)}
-                  className="btn"
-                  type="submit"
+                  onClick={() => setEditMode(!editMode)}
+                  className="edit-delete-btn"
                 >
-                  Submit
+                  {editMode ? "done" : "edit"}
                 </button>
-              </form>
-            ) : (
-              <div className="pro-post-text">
-                <p>{post.text}</p>
-              </div>
-            )}
+                <button
+                  onClick={() => handleDeletePost(post._id)}
+                  className="edit-delete-btn"
+                >
+                  delete
+                </button>
+              </>
+            ) : null}
           </div>
         </div>
       </div>
-
-      {showEdit ? (
-        <>
-          <button onClick={() => setEditMode(!editMode)} className="delete-btn">
-            {editMode ? "done editing" : "edit"}
-          </button>
-          <button
-            onClick={() => handleDeletePost(post._id)}
-            className="delete-btn"
-          >
-            Delete
-          </button>
-        </>
-      ) : null}
     </div>
   );
 }

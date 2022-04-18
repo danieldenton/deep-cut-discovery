@@ -49,19 +49,20 @@ export default function Search({
 
   return (
     <div className="search">
-      <h1>Search</h1>
-
-      <form className="search-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          autoComplete="off"
-          placeholder="Search"
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <button className="btn" type="submit">
-          Search
-        </button>
-      </form>
+      <div className="search-form-container">
+        <h6>search for a post here</h6>
+        <form className="search-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            autoComplete="off"
+            placeholder="Search"
+            onChange={(e) => setValue(e.target.value)}
+          />
+          <button className="btn" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
       <div className="search-results-container">{images}</div>
     </div>
   );

@@ -22,7 +22,7 @@ export default function Tile({
           onClick={() => handleDeleteFave(record._id)}
           className="btn-dlt"
         >
-          Delete
+          remove
         </button>
       )}
     </div>
