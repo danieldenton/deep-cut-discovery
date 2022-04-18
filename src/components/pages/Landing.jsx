@@ -81,6 +81,20 @@ export default function Landing({ currentUser, setCurrentUser }) {
             </Link>
           </div>
         </form>
+        <div className="explanation">
+          <div className="ex-padd">
+            <p>Deep Cut Discovery</p>
+            <p>
+              is a music sharing and discussion blog where users get to share
+              music they enjoy with other users. If you like what another user
+              is into you can see all of the music they have shared to the site.
+              It's a great way to find new music! You can use the Discogs API to
+              search for the record you want to post. And if you have a link to
+              the music you're sharing the you can share that as well.
+            </p>
+            <p>***Try clicking on the album covers on the home page feed.</p>
+          </div>
+        </div>
       </div>
     </div>
   );
