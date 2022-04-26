@@ -4,12 +4,7 @@ import axios from "axios";
 import Tile from "../partials/Tile";
 import ProfilePost from "../partials/ProfilePost";
 
-export default function Profile({
-  currentUser,
-  handleLogout,
-  showEdit,
-  setShowEdit,
-}) {
+export default function Profile({ currentUser, handleLogout }) {
   // PARAMS
   const { id } = useParams();
 
@@ -20,6 +15,7 @@ export default function Profile({
   const [ownerId, setOwnerId] = useState("");
   const [profilePosts, setProfilePosts] = useState([]);
   const [faves, setFaves] = useState([]);
+  const [showEdit, setShowEdit] = useState(false);
 
   // USE-EFFECT
   useEffect(() => {
@@ -83,6 +79,7 @@ export default function Profile({
         `${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${postId}`,
         options
       );
+      setShowEdit(!showEdit);
     } catch (err) {
       console.log(err);
     }

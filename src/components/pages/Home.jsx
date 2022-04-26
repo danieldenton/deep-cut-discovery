@@ -27,7 +27,7 @@ export default function Home({ currentUser, handleDeletePost, setPost }) {
   }, []);
 
   const posts = allUsers.map((user) => user.posts).flat();
-  const feed = posts.reverse().map((post, idx) => {
+  const feed = posts.map((post, idx) => {
     return <Post post={post} currentUser={currentUser} />;
   });
 

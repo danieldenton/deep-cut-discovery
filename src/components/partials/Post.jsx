@@ -17,6 +17,7 @@ export default function Post({ post }) {
           <div className="creator-and-post">
             <div className="post-text">
               <p>{post.text}</p>
+              <p>{post.date}</p>
             </div>
             <Link to={`/profile/${post.creatorId}`} className="post-creator">
               {post.creator}

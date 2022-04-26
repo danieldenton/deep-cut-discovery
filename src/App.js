@@ -16,7 +16,6 @@ export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [value, setValue] = useState("");
   const [selectedRecord, setSelectedRecord] = useState({});
-  const [showEdit, setShowEdit] = useState(false);
   const [post, setPost] = useState({});
   // USE-EFFECT
   // useEffect that handles localstorage if the user navigates away from the page/refreshes
@@ -68,8 +67,6 @@ export default function App() {
                 <Profile
                   currentUser={currentUser}
                   handleLogout={handleLogout}
-                  showEdit={showEdit}
-                  setShowEdit={setShowEdit}
                   setSelectedRecord={setSelectedRecord}
                   selectedRecord={selectedRecord}
                   setPost={setPost}
