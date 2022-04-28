@@ -157,11 +157,13 @@ export default function Profile({ currentUser, handleLogout }) {
           <div>{faveTiles}</div>
         </div>
       </div>
-      {showEdit ? (
-        <button id="delete-profile-btn" onClick={() => handleDeleteProfile()}>
-          delete profile
-        </button>
-      ) : null}
+      <div>
+        {showEdit ? (
+          <button id="delete-profile-btn" onClick={() => handleDeleteProfile()}>
+            delete profile
+          </button>
+        ) : null}
+      </div>
     </div>
   );
 }
