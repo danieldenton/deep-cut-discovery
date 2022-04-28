@@ -308,11 +308,13 @@ header {
   text-shadow: 2px 2px 1px black;
   width: 100%;
   height: 1em;
-  border: yellow solid 1px;
+  /* border: yellow solid 1px; */
+  margin-bottom: 1rem;
 }
 
 .post-tile {
-  height: 500px;
+  height: 24rem;
+  width: 24rem;
   cursor: pointer;
   margin: 2rem;
   border: yellow solid 1px;
@@ -372,12 +374,12 @@ header {
 /* Profile */
 .profile {
   width: 100%;
-  height: 110vh;
+  height: 60rem;
   overflow-y: auto;
 }
 
 .owner-name {
- font-size: 1.3em;
+ font-size: 3rem;
  margin-bottom: 3px;
 }
 
@@ -385,6 +387,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: space-around;
   width: 97.5%;
   height: 150vh;
   /* overflow-y: auto; */
@@ -396,35 +399,29 @@ header {
   justify-content: space-around;
   flex-direction: column-reverse;
   width: 66%;
-  /* height: 150vh; */
-}
-
-.pro-post {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  height: 50vh;
-  width: 55vw;
+  /* border: yellow solid 1px; */
 }
 
 .pro-title-tile-text {
   background-color: rgb(20, 18, 18);
-  border: black solid 1px;
+  border: rgb(60, 7, 236) solid 2px;
   border-radius: 0.25em;
-  width: 100%;
-  height: 48vh;
-  margin: 1px;
+  width: 50rem;
+  height: 25rem;
+  padding: 10px;
+  margin: 1rem;
 }
+
+
 
 .pro-post-title {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
-  font-size: .7em;
+  font-size: 2rem;
   color:rgb(171, 8, 8);
-  margin-top: 5px;
+  margin: 5px;
   text-shadow: 2px 2px 1px black;
   width: 100%;
   height: 1em;
@@ -436,10 +433,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30vh;
+  height: 18rem;
   cursor: pointer;
-  width: 33%;
   margin: 20px;
+  /* border: yellow solid 1px; */
 }
 
 .pro-creator-and-post {
@@ -447,10 +444,12 @@ header {
   align-items: center;
   flex-direction: column;
   width: 60%;
-  height: 33vh;
-  margin: 11px;
+  height: 18rem;
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
   background-color: rgba(5, 2, 79, 0.387);
-  border: black solid 2px;
+  border: rgb(171, 8, 8) solid 2px;
   border-radius: 0.25em;
 }
 
@@ -459,7 +458,6 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
- 
   width: 100%;
   /* border: yellow solid 1px; */
 }
@@ -476,9 +474,10 @@ header {
 .btn-edit {
     background-color: rgb(44, 18, 127);
     color: rgb(171, 8, 8);
-    font-size: 0.5em;
+    font-size: 1rem;
+    font-weight: 700;
     border-radius: 0.75em;
-    border: solid black 1.2px;
+    border: solid black 2px;
     text-shadow: 1px 1px 1px black;
     width: 10vw;
     margin-top: 0px;
@@ -494,7 +493,8 @@ header {
   .edit-delete-btn {
     background-color: rgb(44, 18, 127);
     color: rgb(171, 8, 8);
-    font-size: 0.6em;
+    font-size: 1rem;
+    font-weight: 700;
     border-radius: 0.75em;
     border: solid black 1.2px;
     text-shadow: 1px 1px 1px black;
@@ -513,7 +513,8 @@ header {
   .btn-dlt {
     background-color: rgb(44, 18, 127);
     color: rgb(171, 8, 8);
-    font-size: 0.6em;
+    font-size: 1rem;
+    font-weight: 700;
     border-radius: 0.75em;
     border: solid black 1.2px;
     text-shadow: 1px 1px 1px black;
@@ -542,14 +543,14 @@ header {
   }
 
 .fave-tile-container {
-  margin-top: 4px;
+  margin: 1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 30vw;
   background-color: rgb(20, 18, 18);
-  border: black solid 1px;
+  border: rgb(60, 7, 236) solid 2px;
   border-radius: 0.25em;
   overflow-y: auto;
 }
@@ -558,19 +559,20 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
   /* border: yellow solid 1px; */
-  width: 100%;
 }
 
 
 /* tiles */
 img {
-  width: 100%
-}
+  width: 100% 
+} 
 
 .tiles {
-  margin: 5px;
-  width: 18vw;
+  margin: 1rem;
+  width: 18rem;
   cursor: pointer;
 }
 
@@ -580,11 +582,12 @@ img {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(26, 19, 45, 0.935);
-  border: black solid 1px;
+  background-color: rgb(20, 18, 18);
+  border: rgb(60, 7, 236) solid 2px;
   border-radius: 0.25em;
-  margin: 10px;
-  width: 40vw;
+  margin: 2rem;
+  width: 36rem;
+  height: 12rem;
 }
 
 .search-form {
@@ -593,17 +596,21 @@ img {
 }
 
 .search-message {
-  font-size: .8em;
-  margin: 3px;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 1rem;
 }
 
 .search-input {
-  background-color: rgb(44, 18, 127);
+  background-color: black;
   color: rgb(171, 8, 8);
-  border: solid black 1.2px;
+  border: solid rgb(171, 8, 8) 2px;
   border-radius: 0.25em;
-  margin: 3px;
-  width: 30vw;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1rem;
+  width: 25rem;
+  height: 1.5rem;
 }
 
 .search-input:focus {
@@ -613,18 +620,20 @@ img {
 .search-btn {
   background-color: rgb(44, 18, 127);
   color: rgb(171, 8, 8);
-  font-size: 0.9em;
+  font-size: 1.2em;
+  font-weight: 700;
   border-radius: 0.75em;
-  border: solid black 1.2px;
+  border: solid rgb(171, 8, 8) 2px;
   text-shadow: 1px 1px 1px black;
-  width: 10vw;
-  margin: 3px
+  width: 10rem;
+  margin: 1rem;
 }
 
 .search-btn:hover {
   cursor: pointer;
   background-color: rgb(171, 8, 8); 
-  color: rgb(44, 18, 127);
+  color: black;
+  text-shadow: none;
 }
 
 .search-results-container {
@@ -632,11 +641,11 @@ img {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 10px;
-  width: 40vw;
-  height: 70vh;
+  margin: 2rem;
+  width: 36rem;
+  height: 40rem;
   background-color: rgb(20, 18, 18);
-  border: black solid 1px;
+  border: rgb(60, 7, 236) solid 2px;
   border-radius: 0.25em;
   overflow-y: scroll; 
 }
@@ -667,25 +676,29 @@ img {
 
 .post-selection-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 40vw;
-  height: 89vh;
+  margin: 2rem;
+  width: 36rem;
+  height: 54rem;
   background-color: rgb(20, 18, 18);
-  border: black solid 1px;
+  border: rgb(60, 7, 236) solid 2px;
   border-radius: 0.25em;
+  overflow-y: scroll; 
 }
 
 .post-link {
   background-color: rgb(44, 18, 127);
   color: rgb(171, 8, 8);
-  font-size: 0.9em;
+  font-size: 1.2em;
+  font-weight: 700;
   border-radius: 0.75em;
-  border: solid black 1.2px;
+  border: solid rgb(171, 8, 8) 2px;
   text-shadow: 1px 1px 1px black;
-  width: 15vw;
-  margin: 6px;
+  width: 10rem;
+  margin: 1rem;
   text-decoration: none;
 }
 
@@ -698,18 +711,20 @@ img {
 .fave-btn {
   background-color: rgb(44, 18, 127);
   color: rgb(171, 8, 8);
-  font-size: 0.9em;
+  font-size: 1.2em;
+  font-weight: 700;
   border-radius: 0.75em;
-  border: solid black 1.2px;
+  border: solid rgb(171, 8, 8) 2px;
   text-shadow: 1px 1px 1px black;
-  width: 20vw;
-  margin: 6px
+  width: 10rem;
+  margin: 1rem;
 }
 
 .fave-btn:hover {
   cursor: pointer;
   background-color: rgb(171, 8, 8); 
-  color: rgb(44, 18, 127);
+  color: black;
+  text-shadow: none;
 }
 
 

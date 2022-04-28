@@ -9,9 +9,12 @@ export default function Post({ post }) {
           <h6>{post.title}</h6>
         </div>
         <div className="tile-text">
-          <div className="post-tile">
+          <div>
             <a href={post.link} target="_blank">
-              <BigTile record={{ image: post.image, title: post.title }} />
+              <BigTile
+                className="post-tile"
+                record={{ image: post.image, title: post.title }}
+              />
             </a>
           </div>
           <div className="creator-and-post">
