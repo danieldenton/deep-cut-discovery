@@ -38,9 +38,9 @@ export default function Register({ currentUser, setCurrentUser }) {
   if (currentUser) return <Navigate to="/home" />;
 
   return (
-    <div className="register">
+    <div className="sign-up-background">
       <h2 className="sign-up">Sign Up</h2>
-      <p>{msg ? `${msg}` : ""}</p>
+      <p className="msg">{msg ? `${msg}` : ""}</p>
       <form onSubmit={handleFormSubmit}>
         <div className="signup-column">
           <div>
