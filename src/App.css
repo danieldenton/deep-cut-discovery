@@ -107,25 +107,21 @@ header {
   height: 11rem;
   width: 11rem;
   border-radius: 50%;
-  border: solid rgb(186, 0, 215) 2px;
-  color: rgb(171, 8, 8);
+  border: solid rgb(171, 8, 8) 2px;
+  color: rgba(251, 142, 0, 0.827);
   font-size: 2rem;
   font-family: 'Monoton';
   text-shadow: 2px 2px 1px black;
   background-color: rgb(44, 18, 127);
   animation-name: rotate; 
-    animation-duration: 2s; 
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+  animation-duration: 2s; 
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 @keyframes rotate {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
-}
-
-.dcdx {
-  margin-bottom: 0;
 }
 
 .x {
@@ -139,10 +135,12 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: .8rem;
+}
+ 
+.dcdx {
+  margin-bottom: 0;
   font-size: 1rem;
-  background-color:black;
-  width:20rem;
-  border-radius: 0.75em;
 }
 
 /* login */
@@ -284,15 +282,25 @@ header {
   justify-content:flex-start;
   flex-direction: column;
   overflow-y: auto;
+  max-width: 1000px;
+}
 
+@media only screen and (max-width: 600px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    overflow-x: hidden;
+  }
 }
 
 .dd {
+  text-align: center;
   font-size: 3rem;
   font-family: 'Monoton';
-  margin-top: 6vh;
-  margin-bottom: 0vh;;
-  text-shadow: 4px 4px .5px black;
+  margin: .5rem;
+  color: rgba(251, 142, 0, 0.827);
 }
 
 /* Post */
@@ -301,40 +309,31 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 100%;
-}
-
-.title-tile-text {
   background-color: rgba(59, 0, 148, 0.436);
   border-radius: 0.5em;
-  width: 77rem;
-  height: 27rem;
+  width: 45rem;
   margin: 3rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .post {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+}
 
 .post-title {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2rem;
   color:rgb(171, 8, 8);
-  text-shadow: 2px 2px 1px black;
-  width: 100%;
-  height: 1em;
-  /* border: yellow solid 1px; */
-  margin-bottom: 1rem;
-}
-
-.post-tile {
-  height: 24rem;
-  width: 24rem;
-  cursor: pointer;
-  margin: 2rem;
-  border: yellow solid 1px;
-  object-fit: contain;
+  text-shadow: 3px 3px .5px black;
+  height: 1.5em;
 }
 
 .creator-and-post {
@@ -342,10 +341,11 @@ header {
   align-items: center;
   flex-direction: column;
   width: 58%;
-  height: 24rem;
+  height: 15em;
   margin: 2rem;
   background-color: black;
   border-radius: 0.25em;
+  font-size: 1rem;
 }
 
 
@@ -353,33 +353,47 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 600px) {
+  .tile-text {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+.post-tile {
+  padding-left: 1em;
 }
 
 .post-creator { 
-  font-size: 1.2rem;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
   color: rgb(171, 8, 8);
-  text-shadow: 2px 2px .1px #000000;
   text-decoration: none;
-  background-color: rgb(20, 18, 18);
-  border: rgb(171, 8, 8) solid 2px;
-  border-radius: 0.5em;
-  margin: 15px;
-  height: 1.3em;
-  width: 33%;
+  border: rgb(60, 7, 236) solid 2px;
+  border-radius: 1em;
+  margin: 1em;
+  height: 1.2em;
+  width: 5em;
 }
 
 .post-creator:hover {
   cursor: pointer;
-  background-color: rgb(58, 8, 220);
+  color: yellow;
+  border: rgb(171, 8, 8) solid 2px;
 }
 
 .post-text {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 2rem;
+  text-align: center;
+  font-size: .8rem;
+  margin: 1rem;
   flex: 1;
   overflow-y: scroll;
   word-wrap: normal;
@@ -426,8 +440,6 @@ header {
   padding: 10px;
   margin: 1rem;
 }
-
-
 
 .pro-post-title {
   display: flex;
