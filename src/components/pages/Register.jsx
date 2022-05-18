@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
@@ -39,6 +39,9 @@ export default function Register({ currentUser, setCurrentUser }) {
 
   return (
     <div className="sign-up-background">
+      <Link to={"/"} className="back-link">
+        Back
+      </Link>
       <h2 className="sign-up">Sign Up</h2>
       <p className="msg">{msg ? `${msg}` : ""}</p>
       <form onSubmit={handleFormSubmit}>

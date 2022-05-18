@@ -8,6 +8,7 @@ import Home from "./components/pages/Home";
 import Profile from "./components/pages/Profile";
 import Landing from "./components/pages/Landing";
 import Register from "./components/pages/Register";
+import Login from "./components/pages/Login";
 import SearchPage from "./components/pages/SearchPage";
 import PostForm from "./components/pages/PostForm";
 
@@ -55,6 +56,15 @@ export default function App() {
               path="/register"
               element={
                 <Register
+                  currentUser={currentUser}
+                  setCurrentUser={setCurrentUser}
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <Login
                   currentUser={currentUser}
                   setCurrentUser={setCurrentUser}
                 />

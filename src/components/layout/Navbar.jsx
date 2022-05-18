@@ -19,7 +19,14 @@ export default function Navbar({ handleLogout, currentUser }) {
           </Link>
         </>
       ) : (
-        <></>
+        <>
+          <Link to={"/login"} className="navbar-link">
+            Log In
+          </Link>
+          <Link to={"/register"} className="navbar-link">
+            Sign Up
+          </Link>
+        </>
       )}
     </nav>
   );

@@ -9,7 +9,7 @@ export default function Footer() {
           href="https://github.com/danieldenton/deep-cut-discovery"
           className="github-link"
         >
-          Github
+          <i class="fa-brands fa-github-square"></i>
         </a>
       </div>
     </footer>
