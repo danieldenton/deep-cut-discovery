@@ -1,4 +1,4 @@
-import BigTile from "../partials/BigTile";
+import Tile from "../partials/Tile";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +39,7 @@ export default function PostForm({ currentUser, selectedRecord }) {
       <div className="post-page-ttt">
         <h6 className="post-page-title">{selectedRecord.title}</h6>
         <div className="post-page-form-tile">
-          <BigTile
+          <Tile
             record={{
               image: selectedRecord.cover_image,
               title: selectedRecord.title,

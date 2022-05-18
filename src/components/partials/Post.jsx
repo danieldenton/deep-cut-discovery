@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import BigTile from "./BigTile";
+import Tile from "./Tile";
 
 export default function Post({ post }) {
   return (
@@ -10,7 +10,7 @@ export default function Post({ post }) {
       <div className="tile-text">
         <div className="post-tile">
           <a href={post.link} target="_blank">
-            <BigTile record={{ image: post.image, title: post.title }} />
+            <Tile record={{ image: post.image, title: post.title }} />
           </a>
         </div>
         <div className="creator-and-post">

@@ -7,11 +7,10 @@
   
 }
 
-.layout {
-  max-width: 1110px;
-}
-
-.main {
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: rgb(171, 8, 8);
   font-family: 'Kanit';
 }
@@ -311,8 +310,9 @@ header {
   justify-content: center;
   background-color: rgba(59, 0, 148, 0.436);
   border-radius: 0.5em;
-  width: 45rem;
+  width: 44rem;
   margin: 3rem;
+  animation: fadeIn 2s;
 }
 
 @media only screen and (max-width: 600px) {
@@ -336,24 +336,13 @@ header {
   height: 1.5em;
 }
 
-.creator-and-post {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 58%;
-  height: 15em;
-  margin: 2rem;
-  background-color: black;
-  border-radius: 0.25em;
-  font-size: 1rem;
-}
-
-
 .tile-text {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
+  /* border: yellow solid 1px; */
 }
 
 @media only screen and (max-width: 600px) {
@@ -362,12 +351,32 @@ header {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     padding: 0;
   }
 }
 
-.post-tile {
-  padding-left: 1em;
+.creator-and-post {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 20em;
+  height: 18em;
+  margin: 2rem;
+  background-color: black;
+  border-radius: 0.25em;
+  font-size: 1rem;
+  margin: 1em;
+}
+
+.post-text {
+  text-align: center;
+  font-size: .8rem;
+  margin: 1rem;
+  flex: 1;
+  overflow-y: scroll;
+  word-wrap: normal;
+  padding: 5px;
 }
 
 .post-creator { 
@@ -390,26 +399,32 @@ header {
   background-color: yellow;
 }
 
-.post-text {
-  text-align: center;
-  font-size: .8rem;
-  margin: 1rem;
-  flex: 1;
-  overflow-y: scroll;
-  word-wrap: normal;
-  padding: 5px;
-}
-
 /* Profile */
 .profile {
-  width: 100%;
-  height: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  flex-direction: column;
   overflow-y: auto;
+  max-width: 1000px;
+}
+
+@media only screen and (max-width: 600px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    overflow-x: hidden;
+  }
 }
 
 .owner-name {
- font-size: 3rem;
- margin-bottom: 3px;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Monoton';
+  margin: .5rem;
+  color: rgba(251, 142, 0, 0.827);
 }
 
 .profile-posts-and-faves-container {
@@ -417,67 +432,51 @@ header {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;
-  width: 97.5%;
-  height: 150vh;
-  /* overflow-y: auto; */
+  border: yellow solid 1px;
 }
 
 .profile-posts-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex-direction: column-reverse;
-  width: 66%;
-  /* border: yellow solid 1px; */
+  border: yellow solid 1px;
 }
 
 .pro-title-tile-text {
-  background-color: rgb(20, 18, 18);
-  border: rgb(60, 7, 236) solid 2px;
-  border-radius: 0.25em;
-  width: 50rem;
-  height: 25rem;
-  padding: 10px;
-  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(59, 0, 148, 0.436);
+  border-radius: 0.5em;
+  width: 35rem;
+  margin: 3rem;
 }
 
 .pro-post-title {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: space-around;
-  font-size: 2rem;
+  justify-content: center;
+  font-size: 1.5rem;
   color:rgb(171, 8, 8);
-  margin: 5px;
-  text-shadow: 2px 2px 1px black;
-  width: 100%;
-  height: 1em;
-  /* border: yellow solid 1px; */
+  text-shadow: 3px 3px .5px black;
+  height: 1.5em;
 }
 
-
-.pro-post-tile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 18rem;
-  cursor: pointer;
-  margin: 20px;
-  /* border: yellow solid 1px; */
+.tiles {
+  width: 5em;
 }
 
 .pro-creator-and-post {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 60%;
-  height: 18rem;
+  text-align: center;
+  width: 10em;
+  height: 18em;
   margin: 1rem;
-  font-size: 2rem;
-  font-weight: 700;
-  background-color: rgba(5, 2, 79, 0.387);
-  border: rgb(171, 8, 8) solid 2px;
+  background-color: black;
   border-radius: 0.25em;
+  font-size: 1em;
+  margin: 1em;
 }
 
 .pro-tile-text {
@@ -487,6 +486,11 @@ header {
   justify-content: space-between;
   width: 100%;
   /* border: yellow solid 1px; */
+}
+
+img {
+  height: 100%;
+  width: 100%;
 }
 
 .pro-post-text {

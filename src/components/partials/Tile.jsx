@@ -6,16 +6,9 @@ export default function Tile({
   width,
 }) {
   return (
-    <div
-      onClick={onClick}
-      className={
-        showEdit
-          ? "polaroid animate__animated animate__infinite animate__pulse"
-          : "polaroid animate__animated animate__fadeIn"
-      }
-    >
-      <div className="tiles" style={{ width }}>
-        <img src={record.image} alt={record.title} />
+    <div onClick={onClick} className={showEdit}>
+      <div style={{ width }}>
+        <img className="tiles" src={record.image} alt={record.title} />
       </div>
       {showEdit && (
         <button
