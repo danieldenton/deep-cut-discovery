@@ -107,7 +107,7 @@ header {
   height: 11rem;
   width: 11rem;
   border-radius: 50%;
-  border: solid rgb(171, 8, 8) 2px;
+  border: solid rgb(186, 0, 215) 2px;
   color: rgb(171, 8, 8);
   font-size: 2rem;
   font-family: 'Monoton';
@@ -279,12 +279,17 @@ header {
 
 /* Home */
 .home {
- height: 60rem;
- overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  flex-direction: column;
+  overflow-y: auto;
+
 }
 
 .dd {
-  font-size: 3.5rem;
+  font-size: 3rem;
+  font-family: 'Monoton';
   margin-top: 6vh;
   margin-bottom: 0vh;;
   text-shadow: 4px 4px .5px black;
@@ -296,16 +301,14 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 40rem;
   width: 100%;
 }
 
 .title-tile-text {
-  background-color: rgb(20, 18, 18);
-  border: rgb(60, 7, 236) solid 2px;
-  border-radius: 0.25em;
-  width: 90rem;
-  padding: 10px;
+  background-color: rgba(59, 0, 148, 0.436);
+  border-radius: 0.5em;
+  width: 77rem;
+  height: 27rem;
   margin: 3rem;
 }
 
@@ -341,8 +344,7 @@ header {
   width: 58%;
   height: 24rem;
   margin: 2rem;
-  background-color: rgba(27, 25, 84, 0.757);
-  border: rgb(171, 8, 8) solid 2px;
+  background-color: black;
   border-radius: 0.25em;
 }
 
