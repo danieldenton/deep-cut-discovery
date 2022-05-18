@@ -20,6 +20,9 @@ export default function Navbar({ handleLogout, currentUser }) {
         </>
       ) : (
         <>
+          <Link to={"/"} className="navbar-link">
+            Home
+          </Link>
           <Link to={"/login"} className="navbar-link">
             Log In
           </Link>

@@ -10,8 +10,8 @@ export default function Landing({ currentUser, setCurrentUser }) {
       </div>
       <div className="explanation">
         <div className="ex-padd">
-          <p className="explanation-header">Deep Cut Discovery</p>
-          <p>
+          <p className="dcdx">Deep Cut Discovery</p>
+          <p className="x">
             is a music sharing and discussion blog where users get to share
             music they enjoy with other users. If you like what another user is
             into you can see all of the music they have shared to the site. It's

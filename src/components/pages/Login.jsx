@@ -1,4 +1,4 @@
-import { Navigate, Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
@@ -39,13 +39,10 @@ export default function Login({ currentUser, setCurrentUser }) {
 
   return (
     <div className="login">
-      <Link to={"/"} className="back-link">
-        Back
-      </Link>
       <form onSubmit={handleFormSubmit}>
         <div className="login-column">
           <label className="login-label" htmlFor="email">
-            email
+            Email
           </label>
           <input
             className="login-input"
@@ -55,7 +52,7 @@ export default function Login({ currentUser, setCurrentUser }) {
           />
 
           <label className="login-label" htmlFor="password">
-            password
+            Password
           </label>
           <input
             className="login-input"
@@ -65,17 +62,11 @@ export default function Login({ currentUser, setCurrentUser }) {
           />
 
           <button className="btn" type="submit">
-            log In
+            Log In
           </button>
-          <p className="msg">{msg ? `${msg}` : ""}</p>
-        </div>
-        <div className="sign-up-column">
-          <p>Don't have an account?</p>
-          <Link to="/register" className="register">
-            Sign up here
-          </Link>
         </div>
       </form>
+      <p className="msg">{msg ? `${msg}` : ""}</p>
     </div>
   );
 }

@@ -47,7 +47,7 @@ export default function Register({ currentUser, setCurrentUser }) {
       <form onSubmit={handleFormSubmit}>
         <div className="signup-column">
           <div>
-            <label htmlFor="name">name</label>
+            <label htmlFor="name">Name</label>
           </div>
           <div>
             <input
@@ -60,7 +60,7 @@ export default function Register({ currentUser, setCurrentUser }) {
             />
           </div>
           <div>
-            <label htmlFor="email">email</label>
+            <label htmlFor="email">Email</label>
           </div>
           <div>
             <input
@@ -73,7 +73,7 @@ export default function Register({ currentUser, setCurrentUser }) {
             />
           </div>
           <div>
-            <label htmlFor="password">password</label>
+            <label htmlFor="password">Password</label>
           </div>
           <div>
             <input
@@ -85,7 +85,7 @@ export default function Register({ currentUser, setCurrentUser }) {
             />
           </div>
           <div>
-            <label htmlFor="passwordCheck">confirm password</label>
+            <label htmlFor="passwordCheck">Confirm Password</label>
           </div>
           <div>
             <input
