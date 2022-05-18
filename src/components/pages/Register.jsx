@@ -1,4 +1,4 @@
-import { Navigate, Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
@@ -39,15 +39,12 @@ export default function Register({ currentUser, setCurrentUser }) {
 
   return (
     <div className="sign-up-background">
-      <Link to={"/"} className="back-link">
-        Back
-      </Link>
-      <h2 className="sign-up">Sign Up</h2>
-      <p className="msg">{msg ? `${msg}` : ""}</p>
       <form onSubmit={handleFormSubmit}>
         <div className="signup-column">
           <div>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name" className="signup-label">
+              Name
+            </label>
           </div>
           <div>
             <input
@@ -60,7 +57,9 @@ export default function Register({ currentUser, setCurrentUser }) {
             />
           </div>
           <div>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" className="signup-label">
+              Email
+            </label>
           </div>
           <div>
             <input
@@ -73,7 +72,9 @@ export default function Register({ currentUser, setCurrentUser }) {
             />
           </div>
           <div>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" className="signup-label">
+              Password
+            </label>
           </div>
           <div>
             <input
@@ -85,7 +86,9 @@ export default function Register({ currentUser, setCurrentUser }) {
             />
           </div>
           <div>
-            <label htmlFor="passwordCheck">Confirm Password</label>
+            <label htmlFor="passwordCheck" className="signup-label">
+              Confirm Password
+            </label>
           </div>
           <div>
             <input
@@ -103,6 +106,7 @@ export default function Register({ currentUser, setCurrentUser }) {
           </button>
         </div>
       </form>
+      <p className="msg">{msg ? `${msg}` : ""}</p>
     </div>
   );
 }
