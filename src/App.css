@@ -4,7 +4,10 @@
 
 :root {
   background-color: black;
-  
+}
+
+.layout {
+  width: 100%;
 }
 
 .App {
@@ -25,7 +28,6 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: black;
   height: 3rem;
 }
 
@@ -303,6 +305,10 @@ header {
 }
 
 /* Post */
+img {
+  width: 100%;
+}
+
 .post {
   display: flex;
   flex-wrap: wrap;
@@ -367,6 +373,7 @@ header {
   border-radius: 0.25em;
   font-size: 1rem;
   margin: 1em;
+  overflow-y: scroll;
 }
 
 .post-text {
@@ -432,24 +439,22 @@ header {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;
-  border: yellow solid 1px;
 }
 
 .profile-posts-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: yellow solid 1px;
 }
 
-.pro-title-tile-text {
+.pro-post {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   background-color: rgba(59, 0, 148, 0.436);
   border-radius: 0.5em;
-  width: 35rem;
+  width: 30rem;
   margin: 3rem;
 }
 
@@ -464,18 +469,21 @@ header {
   height: 1.5em;
 }
 
+
 .tiles {
-  width: 5em;
+  max-width: 100%;
 }
 
-.pro-creator-and-post {
-  text-align: center;
-  width: 10em;
-  height: 18em;
-  margin: 1rem;
+.pro-btn-and-post {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 14em;
+  height: 13em;
+  margin: 2rem;
   background-color: black;
   border-radius: 0.25em;
-  font-size: 1em;
+  font-size: 1rem;
   margin: 1em;
 }
 
@@ -485,13 +493,12 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  /* border: yellow solid 1px; */
 }
 
-img {
-  height: 100%;
-  width: 100%;
+.pro-post-tile {
+  max-width: 13em;
 }
+
 
 .pro-post-text {
   font-size: 0.5em;;
@@ -541,25 +548,6 @@ img {
     text-shadow: none;
   }
 
-  #delete-profile-btn {
-    background-color: rgb(44, 18, 127);
-    color: rgb(171, 8, 8);
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 0.75em;
-    border: solid rgb(171, 8, 8) 2px;
-    text-shadow: 1px 1px 1px black;
-    width: 10rem;
-    margin: 2rem;
-  }
-
-  #delete-profile-btn:hover {
-    cursor: pointer;
-    background-color: rgb(171, 8, 8); 
-    color: black;
-    text-shadow: none;
-  }
-
   .btn-dlt {
     background-color: rgb(44, 18, 127);
     color: rgb(171, 8, 8);
@@ -595,13 +583,12 @@ img {
 .fave-tile-container {
   margin: 1rem;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 30vw;
-  background-color: rgb(20, 18, 18);
-  border: rgb(60, 7, 236) solid 2px;
-  border-radius: 0.25em;
+  flex-direction: column;
+  width: 16em;
+  background-color: rgba(59, 0, 148, 0.436);
+  border-radius: 0.5em;
   overflow-y: auto;
 }
 
@@ -610,20 +597,42 @@ img {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  font-weight: 700;
-  /* border: yellow solid 1px; */
+  font-weight: 555;
+  text-shadow: 3px 3px .5px black;
+  height: 1em;
 }
 
+.fave-tiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  width: 16em;
+  overflow-y: auto;
+}
 
-/* tiles */
-img {
-  width: 100% 
-} 
+.fave-tiles {
+  margin: .5rem;
+  width: 7rem;
+}
 
-.tiles {
-  margin: 1rem;
-  width: 18rem;
+#delete-profile-btn {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 0.75em;
+  border: solid rgb(171, 8, 8) 2px;
+  text-shadow: 1px 1px 1px black;
+  width: 10rem;
+  margin: 2rem;
+}
+
+#delete-profile-btn:hover {
   cursor: pointer;
+  background-color: rgb(171, 8, 8); 
+  color: black;
+  text-shadow: none;
 }
 
 

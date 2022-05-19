@@ -120,16 +120,18 @@ export default function Profile({ currentUser, handleLogout }) {
 
   const faveTiles = faves.map((fave, idx) => {
     return (
-      <Tile
-        key={`fave-link${idx}`}
-        record={{
-          image: fave.image,
-          title: fave.title,
-          _id: fave._id,
-        }}
-        handleDeleteFave={handleDeleteFave}
-        showEdit={showEdit}
-      />
+      <div className="fave-tiles">
+        <Tile
+          key={`fave-link${idx}`}
+          record={{
+            image: fave.image,
+            title: fave.title,
+            _id: fave._id,
+          }}
+          handleDeleteFave={handleDeleteFave}
+          showEdit={showEdit}
+        />
+      </div>
     );
   });
 
@@ -152,9 +154,9 @@ export default function Profile({ currentUser, handleLogout }) {
 
         <div className="fave-tile-container">
           <div className="fave-label">
-            <h6>{`${ownerName}'s favorites`}</h6>
+            <h6>Favorites</h6>
           </div>
-          <div>{faveTiles}</div>
+          <div className="fave-tiles-container">{faveTiles}</div>
         </div>
       </div>
       <div>

@@ -1,15 +1,7 @@
-export default function Tile({
-  record,
-  handleDeleteFave,
-  showEdit,
-  onClick,
-  width,
-}) {
+export default function Tile({ record, handleDeleteFave, showEdit, onClick }) {
   return (
-    <div onClick={onClick} className={showEdit}>
-      <div style={{ width }}>
-        <img className="tiles" src={record.image} alt={record.title} />
-      </div>
+    <div onClick={onClick} className="tiles">
+      <img src={record.image} alt={record.title} />
       {showEdit && (
         <button
           onClick={() => handleDeleteFave(record._id)}
