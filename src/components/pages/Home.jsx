@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "../../css/Home.css";
 import Post from "../partials/Post";
 
 export default function Home({ currentUser, handleDeletePost, setPost }) {

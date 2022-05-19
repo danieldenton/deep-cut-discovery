@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "../../css/Profile.css";
 import axios from "axios";
 import Tile from "../partials/Tile";
 import ProfilePost from "../partials/ProfilePost";
@@ -142,7 +143,7 @@ export default function Profile({ currentUser, handleLogout }) {
         ownerId === currentUser.id ? (
           <>
             <button className="btn-edit" onClick={() => onButtonClick()}>
-              {showEdit ? "done editing" : "edit"}
+              {showEdit ? "done" : "edit"}
             </button>
           </>
         ) : null

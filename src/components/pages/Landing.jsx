@@ -1,3 +1,5 @@
+import "../../css/Landing.css";
+
 export default function Landing({ currentUser, setCurrentUser }) {
   return (
     <div className="landing">

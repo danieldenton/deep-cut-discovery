@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 
-import "./App.css";
+import "./css/App.css";
 import Layout from "./components/layout/Layout";
 import Home from "./components/pages/Home";
 import Profile from "./components/pages/Profile";

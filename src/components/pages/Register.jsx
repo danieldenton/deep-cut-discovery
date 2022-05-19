@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
+import "../../css/Register.css";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 

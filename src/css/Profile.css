@@ -1,0 +1,295 @@
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: column;
+    overflow-y: auto;
+    max-width: 1000px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      overflow-x: hidden;
+    }
+  }
+  
+  .owner-name {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Monoton';
+    margin: .5rem;
+    color: rgba(255, 255, 0, 0.663);
+  }
+  
+  .profile-posts-and-faves-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 50em;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .profile-posts-and-faves-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      overflow-x: hidden;
+    }
+  }
+  
+  .pro-post {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(59, 0, 148, 0.436);
+    border-radius: 0.5em;
+    margin-top: 3rem;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .pro-post {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      width: 300px;
+    }
+  }
+  
+  .pro-post-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    word-wrap: wrap;
+    font-size: 1.3rem;
+    color:rgb(171, 8, 8);
+    text-shadow: 3px 3px .5px black;
+    height: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .pro-post-title {
+      word-wrap: wrap;
+      text-align: center;
+      margin: 1em;
+    }
+  }
+  
+  .pro-btn-and-post {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 14em;
+    height: 12em;
+    margin-left: 1rem;
+    background-color: black;
+    border-radius: 0.25em;
+    font-size: 1rem;
+    margin: 1em;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .pro-btn-and-post {
+      word-wrap: wrap;
+      text-align: center;
+      padding: 0;
+    }
+  }
+  
+  .pro-tile-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .pro-tile-text {
+      display: flex;
+      flex-direction: column;
+      word-wrap: wrap;
+      text-align: center;
+      width: 300px;
+      padding: 0;
+      overflow-x: hidden;
+    }
+  }
+  
+  .tiles {
+    max-width: 100%;
+  }
+  
+  .pro-post-tile {
+    margin-left: 1rem;
+    max-width: 12em;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .pro-post-tile {
+        margin: 0;
+    }
+  }
+  
+  .pro-post-text {
+    font-size: 0.6em;;
+    margin: 17px;
+    flex: 1;
+    overflow-y: scroll;
+    word-wrap: normal;
+    padding: 5px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .pro-post-text {
+        font-size: .8em;
+    }
+  }
+  
+  .btn-edit {
+    background-color: rgb(171, 8, 8);
+    color: black;
+    font-size: .8rem;
+    font-weight: 555;
+    border-radius: 1em;
+    border: none;
+    width: 4rem;
+    height: 1rem;
+  }
+    
+    .btn-edit:hover {
+      cursor: pointer;
+      background-color: rgb(171, 8, 8); 
+      color: black;
+      text-shadow: none;
+    }
+
+    .edit-delete-btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: rgba(255, 255, 0, 0.663) solid 1px;
+    }
+  
+    .edit-delete-btn {
+      background-color: rgb(171, 8, 8);
+      color: black;
+      font-size: .8rem;
+      border-radius: 0.75em;
+      border: solid black 1.2px;
+      width: 4em;
+      height: 1.3em;
+    }
+  
+    .edit-delete-btn:hover {
+      cursor: pointer;
+      background-color: rgb(171, 8, 8); 
+      color: black;
+      text-shadow: none;
+    }
+  
+    .btn-dlt {
+      background-color: rgb(171, 8, 8);
+      color: black;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 0.75em;
+      border: solid black 1.2px;
+      text-shadow: 1px 1px 1px black;
+      width: 7vw;
+      height: 3vh;
+      margin: 2px;
+    }
+  
+    .btn-dlt:hover {
+      cursor: pointer;
+      background-color: rgb(171, 8, 8); 
+      color: rgb(44, 18, 127);
+    }
+  
+    .edit-input {
+    background-color: rgb(44, 18, 127);
+    color: rgb(171, 8, 8);
+    border: solid black 1.2px;
+    border-radius: 0.25em;
+    margin-top: 30px;
+    width: 25vw;
+    }
+  
+    .edit-input:focus {
+      outline: none;
+    }
+  
+  .fave-tile-container {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 16em;
+    background-color: rgba(59, 0, 148, 0.436);
+    border-radius: 0.5em;
+    overflow-y: auto;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .fave-tile-container {
+        width: 300px;
+    }
+  }
+  
+  .fave-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 555;
+    text-shadow: 3px 3px .5px black;
+    height: 1.2em;
+  }
+  
+  .fave-tiles-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    width: 16em;
+    overflow-y: auto;
+  }
+  
+  .fave-tiles {
+    margin: .5rem;
+    width: 7rem;
+  }
+  
+  #delete-profile-btn {
+    background-color: rgb(44, 18, 127);
+    color: rgb(171, 8, 8);
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 0.75em;
+    border: solid rgb(171, 8, 8) 2px;
+    text-shadow: 1px 1px 1px black;
+    width: 10rem;
+    margin: 2rem;
+  }
+  
+  #delete-profile-btn:hover {
+    cursor: pointer;
+    background-color: rgb(171, 8, 8); 
+    color: black;
+    text-shadow: none;
+  }
+  

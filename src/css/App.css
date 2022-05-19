@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Monoton&display=swap');
+
+:root {
+  background-color: black;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+.layout {
+  width: 100%;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(171, 8, 8);
+  font-family: 'Kanit';
+}
+
+header {
+  color: rgb(171, 8, 8);
+  text-shadow: 1px 2px .1px #000000;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 3rem;
+}
+
+.navbar-link {
+  color: rgb(171, 8, 8);
+  text-decoration: none;
+  font-family: 'Kanit';
+  font-size: .7rem;
+}
+
+.navbar-link:hover{
+  color: rgba(255, 255, 0, 0.663);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Kanit';
+  color: rgb(171, 8, 8);
+  background-color: black;
+  height: 3em;
+  text-decoration: none;
+  font-size: .7rem;
+  margin-top: 1em;
+}
+
+.github-link {
+  color: rgb(171, 8, 8);
+  text-decoration: none;
+  font-size: 3.5em;
+}
+
+.github-link:hover{
+  color: rgba(255, 255, 0, 0.663);
+}
+
+/* Search page */
+.search-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(20, 18, 18);
+  border: rgb(60, 7, 236) solid 2px;
+  border-radius: 0.25em;
+  margin: 2rem;
+  width: 36rem;
+  height: 12rem;
+}
+
+.search-form {
+  color: rgb(171, 8, 8);
+  text-shadow: 1px 2px .1px #000000;
+}
+
+.search-message {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 1rem;
+}
+
+.search-input {
+  background-color: black;
+  color: rgb(171, 8, 8);
+  border: solid rgb(171, 8, 8) 2px;
+  border-radius: 0.25em;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1rem;
+  width: 25rem;
+  height: 1.5rem;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-btn {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  font-size: 1.2em;
+  font-weight: 700;
+  border-radius: 0.75em;
+  border: solid rgb(171, 8, 8) 2px;
+  text-shadow: 1px 1px 1px black;
+  width: 10rem;
+  margin: 1rem;
+}
+
+.search-btn:hover {
+  cursor: pointer;
+  background-color: rgb(171, 8, 8); 
+  color: black;
+  text-shadow: none;
+}
+
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+  width: 36rem;
+  height: 40rem;
+  background-color: rgb(20, 18, 18);
+  border: rgb(60, 7, 236) solid 2px;
+  border-radius: 0.25em;
+  overflow-y: scroll; 
+}
+
+.search-and-post-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.search-and-post-border {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  margin: 30px;
+}
+
+.selection-img {
+    margin: 10px;
+    width: 30vw;
+}
+
+.post-selection-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+  width: 36rem;
+  height: 54rem;
+  background-color: rgb(20, 18, 18);
+  border: rgb(60, 7, 236) solid 2px;
+  border-radius: 0.25em;
+  overflow-y: scroll; 
+}
+
+.post-link {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  font-size: 1.2em;
+  font-weight: 700;
+  border-radius: 0.75em;
+  border: solid rgb(171, 8, 8) 2px;
+  text-shadow: 1px 1px 1px black;
+  width: 10rem;
+  margin: 1rem;
+  text-decoration: none;
+}
+
+.post-link:hover {
+  cursor: pointer;
+  background-color: rgb(171, 8, 8); 
+  color: black;
+  text-shadow: none;
+}
+
+.fave-btn {
+  background-color: rgb(44, 18, 127);
+  color: rgb(171, 8, 8);
+  font-size: 1.2em;
+  font-weight: 700;
+  border-radius: 0.75em;
+  border: solid rgb(171, 8, 8) 2px;
+  text-shadow: 1px 1px 1px black;
+  width: 10rem;
+  margin: 1rem;
+}
+
+.fave-btn:hover {
+  cursor: pointer;
+  background-color: rgb(171, 8, 8); 
+  color: black;
+  text-shadow: none;
+}
+
+
+.empty-post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 89vh;
+  background-color: rgb(20, 18, 18);
+  border: black solid 1px;
+  border-radius: 0.25em;
+}
+
+/* PostPage */
+.post-page-ttt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80rem;
+  height: 40rem;
+  margin: 20px;
+  background-color: rgb(20, 18, 18);
+  border: rgb(60, 7, 236) solid 2px;
+  border-radius: 0.25em;
+}
+
+
+.post-page-title {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 5px;
+}
+
+.post-page-form-tile {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.post-page-text-input {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: black;
+  color: rgb(171, 8, 8);
+  border: solid rgb(171, 8, 8) 2px;
+  border-radius: 0.25em;
+  margin: 1rem;
+  width: 36rem;
+
+}
+
+.post-page-text-input:focus {
+  outline: none;
+}
+
+.post-page-form-link {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: black;
+  color: rgb(171, 8, 8);
+  border: solid rgb(171, 8, 8) 2px;
+  border-radius: 0.25em;
+  margin: 1rem;
+  width: 36rem;
+}
+
+
+.post-page-form-link:focus {
+  outline: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

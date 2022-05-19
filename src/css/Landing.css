@@ -1,0 +1,101 @@
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, rgb(16, 1, 104), rgb(63, 2, 138), rgb(135, 3, 63), rgb(255, 72, 0));
+    background-size: 400%;
+    animation: gradient 8s ease infinite;
+    max-width: 800px;
+    animation: fadeIn 2s;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .landing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      overflow-x: hidden;
+    }
+  }
+
+  .record {
+    display: flex;
+    margin: 1rem;
+  }
+  
+  .outer-record{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;
+    width: 30rem;
+    border-radius: 50%;
+    background: linear-gradient(-45deg, rgb(0, 0, 0), rgb(16, 14, 18), rgb(10, 8, 15), rgb(8, 4, 15));
+    animation-name: rotate; 
+    animation-duration: 2s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .inner-record {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 11rem;
+    width: 11rem;
+    border-radius: 50%;
+    border: solid black 2px;
+    font-size: 2rem;
+    font-family: 'Monoton';
+    color: rgba(255, 136, 0, 0.76);
+    text-shadow: 2px 2px 1px black;
+    background-color: rgb(44, 18, 127);
+    border: rgb(171, 8, 8) solid 2px;
+    animation-name: rotate; 
+    animation-duration: 5s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+  }
+  
+  
+  .x {
+    margin-top: 0;
+  }
+  
+  .explanation {
+    background-color: black;
+    border-radius: 2em;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: .8rem;
+  }
+   
+  .dcdx {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 0, 0.663);
+    font-family: 'Monoton';
+  }
