@@ -2,25 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(-45deg, rgb(16, 1, 104), rgb(63, 2, 138), rgb(135, 3, 63), rgb(255, 72, 0));
-    background-size: 400%;
-    animation: gradient 8s ease infinite;
     max-width: 800px;
-    animation: fadeIn 2s;
   }
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
   @media only screen and (max-width: 600px) {
     .landing {
       display: flex;
@@ -34,6 +18,7 @@
   .record {
     display: flex;
     margin: 1rem;
+    animation: fadeIn 2s;
   }
   
   .outer-record{
@@ -64,7 +49,7 @@
     color: rgba(255, 136, 0, 0.76);
     text-shadow: 2px 2px 1px black;
     background-color: rgb(44, 18, 127);
-    border: rgb(171, 8, 8) solid 2px;
+    border: rgba(255, 255, 0, 0.663) solid 2px;
     animation-name: rotate; 
     animation-duration: 5s; 
     animation-iteration-count: infinite;
@@ -91,6 +76,7 @@
     flex-direction: column;
     align-items: center;
     font-size: .8rem;
+    animation: fadeIn 2s;
   }
    
   .dcdx {
@@ -98,4 +84,8 @@
     font-size: 1rem;
     color: rgba(255, 255, 0, 0.663);
     font-family: 'Monoton';
+  }
+
+  .orange {
+    color: rgba(255, 136, 0, 0.76);
   }

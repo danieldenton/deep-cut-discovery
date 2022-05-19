@@ -13,6 +13,9 @@
     align-items: center;
     margin-top: 2rem;
     height: 15rem;
+    background-color: black;
+    padding: 1em;
+    border-radius: 2em;
     animation: fadeIn 2s;
   }
   

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Monoton&display=swap');
+ 
 
 :root {
   background-color: black;
@@ -20,6 +21,25 @@ html, body {
   font-family: 'Kanit';
 }
 
+.rainbow {
+  background: linear-gradient(-45deg, rgb(16, 1, 104), rgb(63, 2, 138), rgb(135, 3, 63), rgb(255, 72, 0));
+  background-size: 400%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}  
+
+
 header {
   color: rgb(171, 8, 8);
   text-shadow: 1px 2px .1px #000000;
@@ -30,7 +50,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 3rem;
+  height: 2rem;
 }
 
 .navbar-link {
@@ -50,7 +70,6 @@ header {
   align-items: center;
   font-family: 'Kanit';
   color: rgb(171, 8, 8);
-  background-color: black;
   height: 3em;
   text-decoration: none;
   font-size: .7rem;

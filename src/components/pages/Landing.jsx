@@ -21,7 +21,9 @@ export default function Landing({ currentUser, setCurrentUser }) {
             for the record you want to post. And if you have a link to the music
             you're sharing the you can share that as well.
           </p>
-          <p>***Try clicking on the album covers on the home page feed.</p>
+          <p className="orange">
+            Try clicking on the album covers on the home page feed.
+          </p>
         </div>
       </div>
     </div>
