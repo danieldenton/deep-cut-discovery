@@ -18,6 +18,7 @@ export default function App() {
   const [value, setValue] = useState("");
   const [selectedRecord, setSelectedRecord] = useState({});
   const [post, setPost] = useState({});
+  const [editMode, setEditMode] = useState(false);
   // USE-EFFECT
   // useEffect that handles localstorage if the user navigates away from the page/refreshes
   useEffect(() => {
@@ -84,6 +85,8 @@ export default function App() {
                     setSelectedRecord={setSelectedRecord}
                     selectedRecord={selectedRecord}
                     setPost={setPost}
+                    editMode={editMode}
+                    setEditMode={setEditMode}
                   />
                 }
               />

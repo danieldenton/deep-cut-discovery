@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import Tile from "./Tile";
 
@@ -7,8 +7,9 @@ export default function ProfilePost({
   handleDeletePost,
   showEdit,
   setShowEdit,
+  editMode,
+  setEditMode,
 }) {
-  const [editMode, setEditMode] = useState(false);
   const [editPostForm, setEditPostForm] = useState({});
 
   const handleSubmitEdit = async (e, postId) => {
@@ -66,27 +67,27 @@ export default function ProfilePost({
             ) : (
               <div className="pro-post-text">
                 <p>{post.text}</p>
+                <div className="edit-del-btns">
+                  {showEdit ? (
+                    <>
+                      <button
+                        onClick={() => setEditMode(!editMode)}
+                        className="edit-delete-btn"
+                      >
+                        {editMode ? "done" : "edit"}
+                      </button>
+                      <button
+                        onClick={() => handleDeletePost(post._id)}
+                        className="edit-delete-btn"
+                      >
+                        delete
+                      </button>
+                    </>
+                  ) : null}
+                </div>
               </div>
             )}
           </div>
-        </div>
-        <div className="edit-del-btns">
-          {showEdit ? (
-            <>
-              <button
-                onClick={() => setEditMode(!editMode)}
-                className="edit-delete-btn"
-              >
-                {editMode ? "done" : "edit"}
-              </button>
-              <button
-                onClick={() => handleDeletePost(post._id)}
-                className="edit-delete-btn"
-              >
-                delete
-              </button>
-            </>
-          ) : null}
         </div>
       </div>
     </div>

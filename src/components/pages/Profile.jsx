@@ -5,7 +5,12 @@ import axios from "axios";
 import Tile from "../partials/Tile";
 import ProfilePost from "../partials/ProfilePost";
 
-export default function Profile({ currentUser, handleLogout }) {
+export default function Profile({
+  currentUser,
+  handleLogout,
+  setEditMode,
+  editMode,
+}) {
   // PARAMS
   const { id } = useParams();
 
@@ -46,6 +51,7 @@ export default function Profile({ currentUser, handleLogout }) {
   // Toggles delete buttons
   const onButtonClick = () => {
     setShowEdit(!showEdit);
+    setEditMode(false);
   };
 
   // deletes a post with corresponding to ID from user profile
@@ -114,6 +120,8 @@ export default function Profile({ currentUser, handleLogout }) {
           handleDeletePost={handleDeletePost}
           showEdit={showEdit}
           setShowEdit={setShowEdit}
+          editMode={editMode}
+          setEditMode={setEditMode}
         />
       </div>
     );
