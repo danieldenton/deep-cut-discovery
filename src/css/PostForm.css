@@ -16,31 +16,27 @@
     height: 25rem;
     border-radius: 2em;
     margin: 2em;
-    text-shadow: none;
   }
 
   @media only screen and (max-width: 600px) {
     .post-box {
         display: flex;
         flex-wrap: wrap;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         background-color: black;
-        width: 100%;
         border-radius: 2em;
         margin: 2em;
-        text-shadow: none;
+        height: 100%;
       }
   }
-  
   
   .post-page-title {
     text-align: center;
     font-size: 1.2em;
     max-width: 80%;
     margin-top: .5em;
-
   }
 
   .post-tile-input {
@@ -48,7 +44,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: row;
-    width: 100%;
   }
   
   .post-page-form-tile {
@@ -72,7 +67,12 @@
     border-radius: 0.25em;
     margin: 1rem;
     width: 23rem;
-  
+  }
+
+  @media only screen and (max-width: 600px) {
+    .post-page-text-input {
+        width: 21em;
+    }
   }
 
   .post-page-text-input::selection {
@@ -95,20 +95,22 @@
     width: 23rem;
   }
 
+  @media only screen and (max-width: 600px) {
+    .post-page-form-link {
+        width: 21em;
+    }
+  }
+
   .post-page-form-link::selection {
     background: rgb(171, 8, 8);
     color: black;
   }
-
-  label {
-      text-shadow: none;
-  }
-  
   
   .post-page-form-link:focus {
     outline: none;
   }
 
   .btn {
-      margin-top: .5em;
+      margin: .5em;
+      margin-bottom: 1em;;
   }
