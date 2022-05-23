@@ -1,4 +1,3 @@
-import { useState } from "react";
 import axios from "axios";
 import Tile from "./Tile";
 
@@ -50,9 +49,7 @@ export default function Search({
     <div className="search">
       <div className="search-form-container">
         <div>
-          <h6 className="search-message">
-            Search Discogs for your record here:
-          </h6>
+          <p className="search-message">Search Discogs for your record here:</p>
         </div>
         <form className="search-form" onSubmit={handleSubmit}>
           <div>
@@ -70,7 +67,9 @@ export default function Search({
           </div>
         </form>
       </div>
-      <div className="search-results-container">{images}</div>
+      <div className="search-results-container">
+        <div className="search-result-tiles">{images}</div>
+      </div>
     </div>
   );
 }

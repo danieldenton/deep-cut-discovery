@@ -1,5 +1,6 @@
 import FaveOrPost from "../partials/FaveOrPost";
 import Search from "../partials/Search";
+import "../../css/SearchPage.css";
 import { useState } from "react";
 
 export default function SearchPage({
@@ -15,7 +16,7 @@ export default function SearchPage({
 
   return (
     <div className="search-and-post-container">
-      <div className="search-and-post-border">
+      <div className="search-container">
         <Search
           searchResults={searchResults}
           setSearchResults={setSearchResults}
@@ -23,13 +24,13 @@ export default function SearchPage({
           value={value}
           setValue={setValue}
         />
-
-        <FaveOrPost
-          currentUser={currentUser}
-          selectedRecord={selectedRecord}
-          setSelectedRecord={setSelectedRecord}
-        />
       </div>
+
+      <FaveOrPost
+        currentUser={currentUser}
+        selectedRecord={selectedRecord}
+        setSelectedRecord={setSelectedRecord}
+      />
     </div>
   );
 }

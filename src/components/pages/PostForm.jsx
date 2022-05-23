@@ -1,4 +1,5 @@
 import Tile from "../partials/Tile";
+import "../../css/PostForm.css";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -36,15 +37,17 @@ export default function PostForm({ currentUser, selectedRecord }) {
   };
   return (
     <div className="post-page">
-      <div className="post-page-ttt">
+      <div className="post-box">
         <h6 className="post-page-title">{selectedRecord.title}</h6>
-        <div className="post-page-form-tile">
-          <Tile
-            record={{
-              image: selectedRecord.cover_image,
-              title: selectedRecord.title,
-            }}
-          />
+        <div className="post-tile-input">
+          <div className="post-page-form-tile">
+            <Tile
+              record={{
+                image: selectedRecord.cover_image,
+                title: selectedRecord.title,
+              }}
+            />
+          </div>
           <form className="post-page-form">
             <div>
               <div>

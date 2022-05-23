@@ -1,0 +1,114 @@
+/* PostPage */
+.post-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+  }
+
+  .post-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 25rem;
+    border-radius: 2em;
+    margin: 2em;
+    text-shadow: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .post-box {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        width: 100%;
+        border-radius: 2em;
+        margin: 2em;
+        text-shadow: none;
+      }
+  }
+  
+  
+  .post-page-title {
+    text-align: center;
+    font-size: 1.2em;
+    max-width: 80%;
+    margin-top: .5em;
+
+  }
+
+  .post-tile-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .post-page-form-tile {
+    max-width: 13em;
+    margin-left: 1em;
+  }
+
+  .post-page-form {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .post-page-text-input {
+    font-family: 'Kanit';
+    font-size: 1rem;
+    background-color: black;
+    color: rgb(171, 8, 8);
+    border: solid rgba(111, 0, 255, 0.663) 2px;
+    border-radius: 0.25em;
+    margin: 1rem;
+    width: 23rem;
+  
+  }
+
+  .post-page-text-input::selection {
+    background: rgb(171, 8, 8);
+    color: black;
+  }
+  
+  .post-page-text-input:focus {
+    outline: none;
+  }
+  
+  .post-page-form-link {
+    font-family: 'Kanit';
+    font-size: 1rem;
+    background-color: black;
+    color: rgb(171, 8, 8);
+    border: solid rgba(111, 0, 255, 0.663) 2px;
+    border-radius: 0.25em;
+    margin: 1rem;
+    width: 23rem;
+  }
+
+  .post-page-form-link::selection {
+    background: rgb(171, 8, 8);
+    color: black;
+  }
+
+  label {
+      text-shadow: none;
+  }
+  
+  
+  .post-page-form-link:focus {
+    outline: none;
+  }
+
+  .btn {
+      margin-top: .5em;
+  }
