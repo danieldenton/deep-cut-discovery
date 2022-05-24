@@ -16,15 +16,13 @@ export default function SearchPage({
 
   return (
     <div className="search-and-post-container">
-      <div className="search-container">
-        <Search
-          searchResults={searchResults}
-          setSearchResults={setSearchResults}
-          setSelectedRecord={setSelectedRecord}
-          value={value}
-          setValue={setValue}
-        />
-      </div>
+      <Search
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
+        setSelectedRecord={setSelectedRecord}
+        value={value}
+        setValue={setValue}
+      />
 
       <FaveOrPost
         currentUser={currentUser}

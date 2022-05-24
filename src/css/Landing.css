@@ -35,6 +35,7 @@
 
   @media only screen and (max-width: 600px) {
     .outer-record {
+      margin-top: 20px;
       width: 444px;
       height: 444px;
     }
@@ -92,6 +93,7 @@
 
   @media only screen and (max-width: 600px) {
     .explanation {
+      margin-top: 1em;
       width: 330px;
     }
   }
