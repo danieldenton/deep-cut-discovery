@@ -3,20 +3,21 @@
     align-items: center;
     justify-content:flex-start;
     flex-direction: column;
-    height: 380px;
+    height:43em;
   }
   
   .signup-column {
-    font-size: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-    height: 15rem;
-    background-color: black;
-    padding: 1em;
-    border-radius: 2em;
-    animation: fadeIn 2s;
+    font-size: 2rem;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-around;
+     margin-top: 6rem;
+     height: 30rem;
+     animation: fadeIn 2s;
+     background-color: black;
+     padding: 1em;
+     border-radius: 2em;
   }
   
   .signup-label {
@@ -28,11 +29,17 @@
     background-color: black;
     border: solid rgb(60, 7, 236) 2px;
     font-family: 'Kanit';
-    font-size: .8rem;
+    font-size: 1.7rem;
     color: rgb(171, 8, 8);
     border-radius: 0.25rem;
-    width: 15rem;
-    height: 1rem;
+    width: 30rem;
+    height: 2rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .signup-input {
+     width: 12em;
+    }
   }
   
   .signup-input::selection {
@@ -47,13 +54,14 @@
   .signup-btn {
     background-color: rgb(171, 8, 8);
     color: black;
-    font-size: .8rem;
+    font-size: 1.6rem;
     font-family: 'Kanit';
     border-radius: 1em;
     border: none;
-    width: 9rem;
-    height: 1.3rem;
-    margin: 1em;
+    margin-bottom: .5em;
+    width: 16rem;
+    height: 3rem;
+    margin-top: 1.3em;
   }
   
   .signup-btn:hover {

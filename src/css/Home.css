@@ -4,7 +4,7 @@
     justify-content:flex-start;
     flex-direction: column;
     overflow-y: auto;
-    max-width: 1000px;
+    max-width: 1450px;
   }
   
   @media only screen and (max-width: 600px) {
@@ -19,7 +19,7 @@
   
   .dd {
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: 'Monoton';
     margin-bottom: .5em;
     color: rgba(255, 255, 0, 0.663);
@@ -38,7 +38,7 @@
     justify-content: center;
     background-color: black;
     border-radius: 0.5em;
-    width: 44rem;
+    width: 60rem;
     margin-bottom: 2rem;
     animation: fadeIn 2s;
   }
@@ -58,7 +58,7 @@
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.6rem;
     color:rgb(171, 8, 8);
     text-shadow: 1px 1px .5px rgba(111, 0, 255, 0.663);
     height: 1.5em;
@@ -78,7 +78,7 @@
   }
 
   .post-tile {
-      width: 15em;
+      width: 20em;
       margin-left: 1em;
   }
   
@@ -86,6 +86,7 @@
     .post-tile {
       height: 300px;
       width: 300px;
+      margin-left: 0;
     }
   }
   
@@ -100,10 +101,10 @@
   @media only screen and (max-width: 600px) {
     .tile-text {
       display: flex;
-      flex-wrap: wrap;
       flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
+      padding: .1em;
+      margin-top: 1em;
+      max-width: 333px;
       padding: 0;
     }
   }
@@ -112,12 +113,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 23em;
-    height: 15em;
+    width: 30em;
+    height: 23em;
     margin: 2rem;
     background-color: rgba(0, 0, 0, 0.245);
-    border-radius: 0.25em;
-    font-size: 1rem;
     margin: 1em;
     margin-left: 0;
     overflow-y: scroll;
@@ -125,27 +124,34 @@
   
   .post-text {
     text-align: center;
-    font-size: .8rem;
+    font-size: 1.2rem;
     margin: 1rem;
     flex: 1;
     overflow-y: scroll;
     word-wrap: normal;
     padding: 5px;
   }
+
+  @media only screen and (max-width: 600px) {
+    .post-text {
+      max-width: 330px;;
+    }
+  }
   
   .post-creator { 
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: .8rem;
+    font-size: 1.3rem;
+    font-weight: 600;
     background-color: rgba(111, 0, 255, 0.663);
     color: rgb(171, 8, 8);
-    text-shadow: 1px 1px .5px black;
+    text-shadow: 2px 2px .5px black;
     text-decoration: none;
     border-radius: 1em;
     margin: 1em;
-    height: 1.2em;
-    width: 5em;
+    height: 1.6em;
+    width: 8em;
   }
   
   .post-creator:hover {

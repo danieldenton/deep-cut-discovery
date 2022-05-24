@@ -18,7 +18,7 @@ html, body {
 
 .layout {
   width: 100%;
-  max-width: 900px;
+  max-width: 1500px;
 }
 
 .App {
@@ -54,7 +54,7 @@ header {
   justify-content: space-around;
   align-items: center;
   background-color: black;
-  height: 2rem;
+  height: 3.5rem;
   border-radius: .5em;
 }
 
@@ -62,7 +62,7 @@ header {
   color: rgb(171, 8, 8);
   text-decoration: none;
   font-family: 'Kanit';
-  font-size: .7rem;
+  font-size: 1.2rem;
 }
 
 .navbar-link:hover{
@@ -78,7 +78,7 @@ header {
   color: rgb(171, 8, 8);
   height: 3.5em;
   text-decoration: none;
-  font-size: .7rem;
+  font-size: 1.1rem;
   margin-top: 1em;
   border-radius: .5em;
 }

@@ -2,13 +2,24 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  height: 100%;
+  justify-content: center;
+  width: 1433px;
+  height: 44em;
 }
 
+@media only screen and (max-width: 600px) {
+  .search-and-post-container {
+      width: 333px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+  }
+}
+
+
+
 .search-container {
-    width: 25rem;
+    width: 40rem;
   }
 
 .search-form-container {
@@ -18,17 +29,38 @@
   flex-direction: column;
   background-color: black;
   border-radius: 2em;
-  margin: 2rem;
-  height: 8rem;
+  height: 12rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-form-container {
+    display: flex;
+    align-items: center;   
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: black;
+    border-radius: 2em;
+    height: 16rem;
+    width: 333px;
+    margin-top: 1em;
+  }
 }
 
 .search-message {
-  font-size: 1rem;
+  font-size: 1.8rem;
   margin: .4rem; 
-  font-weight: 500;
 }
+
+@media only screen and (max-width: 600px) {
+  .search-message {
+    font-size: 1.8rem;
+    margin: 1rem; 
+  }
   
-  
+}
+
 .search-form {
   color: rgb(171, 8, 8);
   display: flex;
@@ -41,12 +73,12 @@
     background-color: black;
     border: solid rgb(60, 7, 236) 2px;
     font-family: 'Kanit';
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: rgb(171, 8, 8);
     border-radius: 0.25rem;
     margin: 0;
-    width: 15rem;
-    height: 1.2rem;
+    width: 17rem;
+    height: 2rem;
   }
 
   .search-input::selection {
@@ -67,15 +99,16 @@
     align-items: center;   
     justify-content: center;
     background-color: rgb(171, 8, 8);
+    text-decoration: none;
+    text-shadow: none;
     color: black;
-    font-size: .9rem;
+    font-size: 1.2rem;
     font-family: 'Kanit';
     border-radius: 1em;
+    width: 10rem;
+    height: 1.6em;
+    margin: 1rem;
     border: none;
-    margin-top: 1.3em;
-    width: 5rem;
-    margin: .5rem;
-    height: 1.2em;
   }
 
   .search-btn:hover {
@@ -85,17 +118,23 @@
   
   .search-results-container {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    margin: 2rem;
-    width: 21rem;
-    height: 16rem;
+    flex-wrap: wrap;
+    margin-top: 1em;
+    width: 40em;
+    height: 24rem;
     background-color: black;
     border-radius: 2em;
     overflow-y: scroll; 
     scrollbar-color: rgb(171, 8, 8);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .search-results-container {
+      width: 333px;
+    }
   }
 
   .post-container {
@@ -104,10 +143,15 @@
     align-items: center;
     justify-content: center;
     background-color: black;
-    margin-right: 2.3em;
-    width: 20rem;
-    height: 26rem;
+    width: 40rem;
+    height: 36rem;
     border-radius: 2em;
+    margin: 1rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .post-container {
+    }
   }
 
   .empty-post-container {
@@ -115,16 +159,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 20rem;
-    height: 89vh;
+    width: 33rem;
+    height: 33rem;
     background-color: black;
-    border-radius: 1em;
-    padding: 1em;
+    border-radius: 2em;
+    margin: 1rem;
     margin-right: 2.3em;
   }
+
+  @media only screen and (max-width: 600px) {
+    .empty-post-container {
+    }
+  }
+
   
   .search-result-tiles {
-    max-width: 10em;
+    max-width: 15em;
     margin: 1em;
   }
 
@@ -133,7 +183,7 @@
   }
 
   .selection-img {
-    max-width: 10em;
+    max-width: 15em;
     margin: 1em;
   }
   
@@ -145,10 +195,9 @@
     text-decoration: none;
     text-shadow: none;
     color: black;
-    font-size: .9rem;
+    font-size: 1.2rem;
     font-family: 'Kanit';
     border-radius: 1em;
-    border: none;
     width: 10rem;
     height: 1.6em;
     margin: 1rem;
@@ -165,7 +214,7 @@
     justify-content: center;
     background-color: rgb(171, 8, 8);
     color: black;
-    font-size: .9rem;
+    font-size: 1.2rem;
     font-family: 'Kanit';
     border-radius: 1em;
     border: none;

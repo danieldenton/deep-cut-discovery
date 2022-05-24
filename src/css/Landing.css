@@ -19,12 +19,12 @@
     animation: fadeIn 2s;
   }
   
-  .outer-record{
+  .outer-record {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30rem;
-    width: 30rem;
+    height: 44rem;
+    width: 44rem;
     border-radius: 50%;
     background: linear-gradient(-45deg, rgb(0, 0, 0), rgb(16, 14, 18), rgb(10, 8, 15), rgb(8, 4, 15));
     animation-name: rotate; 
@@ -32,14 +32,22 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
+
+  @media only screen and (max-width: 600px) {
+    .outer-record {
+      width: 444px;
+      height: 444px;
+    }
+  }
+
   
   .inner-record {
     text-align: center;
-    height: 11rem;
-    width: 11rem;
+    height: 17rem;
+    width: 17rem;
     border-radius: 50%;
     border: solid black 2px;
-    font-size: 2rem;
+    font-size: 3.3rem;
     font-family: 'Monoton';
     color: rgba(255, 136, 0, 0.76);
     text-shadow: 2px 2px 1px black;
@@ -49,6 +57,14 @@
     animation-duration: 5s; 
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .inner-record {
+      width: 180px;
+      height: 180px;
+      font-size: 2em;
+    }
   }
 
   @keyframes rotate {
@@ -65,18 +81,27 @@
     background-color: black;
     border-radius: 2em;
     text-align: center;
-    margin: 1rem;
+    margin: 5rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: .8rem;
+    font-size: 1.5rem;
     animation: fadeIn 2s;
   }
+
+  @media only screen and (max-width: 600px) {
+    .explanation {
+      width: 330px;
+    }
+  }
+
+
+  
    
   .dcdx {
     margin-bottom: 0;
-    font-size: 1rem;
+    font-size: 2rem;
     color: rgba(255, 255, 0, 0.663);
     font-family: 'Monoton';
   }
