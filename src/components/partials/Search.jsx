@@ -19,7 +19,7 @@ export default function Search({
         },
       };
       const response = await axios.get(
-        `https://api.discogs.com/database/search?q=${value}&key=tuREWmtEZJcsMebejslm&secret=${process.env.REACT_APP_API_SECRET}`,
+        `https://api.discogs.com/database/search?q=${value}&key=tuREWmtEZJcsMebejslm&secret=${process.env.aGqHHNSrjltjRctqxaaqwNyiqTTThHfD}`,
         options
       );
       console.log(response.data.results);
